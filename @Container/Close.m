@@ -4,7 +4,7 @@ function Close(obj,varargin)
 %
 
 try
-    delete(obj);
+    delete(obj.hCont);
 catch err
     disp(err);
     % Nothing to do !!!

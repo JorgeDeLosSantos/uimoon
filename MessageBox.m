@@ -1,22 +1,20 @@
 classdef MessageBox
     % MessageBox
     % 
-	% Sintaxis:
+	% Syntax:
 	% 
 	%          MessageBox(msg,title,style,icon);
 	%
-	% Ejemplo:
+	% Example:
 	%
-	%          MessageBox('Este es un mensaje de error','LAB DLS','error');
+	%          MessageBox('This is a error dialog','UIMOON','error');
 	%
-	%
-	%
-    % styles:
-    %      - normal
-    %      - error
-    %      - warn
-    %      - info
-    %      - custom
+    % Styles:
+    %      - normal :   Normal Message Box
+    %      - error  :   Message Box with error icon
+    %      - warn   :   Message Box with warning icon
+    %      - info   :   Message Box with information icon
+    %      - custom :   Message Box with customized icon
 	% 
 	% 
     
@@ -33,7 +31,7 @@ classdef MessageBox
                 style = 'normal';
             end
             if strcmp(style,'custom') && nargin < 4
-                % Icono no definido ...
+                % Undefined icon, use a empty image ...
                 icon = zeros(32,32,3);
             end
             
@@ -57,6 +55,16 @@ classdef MessageBox
         end
         
         function SetFont(obj,name,size)
+	        % MessageBox/SetFont
+	        %
+	        % Set the MessageBox font:
+	        %
+	        % Parameters:
+	        % 
+	        %         name :   Font Name, i.e. 'Arial', 'Times New Roman', 'DejaVu Sans'
+	        %
+	        % 		  size :   Font size, i.e.  10, 12, 18, 11, ...
+	        %
             msg_childs = get(obj.hMsg,'Children');
             if strcmp(get(msg_childs(1),'type'),'axes')
                 hTxt = get(msg_childs(1),'Children');

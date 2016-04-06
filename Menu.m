@@ -1,7 +1,7 @@
 classdef Menu
     % Menu
     % 
-    % Sintaxis:
+    % Syntax:
     %
     %        M = Menu('Label Menu',@Callback_Fcn);
     %        M = Menu('Label Menu',@Callback_Fcn,varargin);

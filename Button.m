@@ -8,9 +8,10 @@ classdef Button < Component
     % Ejemplo:
     %
     %           app = Frame('App 1');
-    %           bt = Button('Botón');
-    %           bt.SetCallback('disp(''Hola'')');
+    %           bt = Button('Button');
+    %           bt.SetCallback('disp(''Hello!'')');
     %           app.Add(bt);
+    %
     
     properties
     end

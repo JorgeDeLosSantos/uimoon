@@ -1,13 +1,12 @@
 classdef AboutDialog < handle
+% An AboutDialog class
+% 
+% UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos <delossantosmfq@gmail.com>
+% Blog: larysa-tech.blogspot.mx
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
 %
-%
-%                 ================================================
-%                            Autor: Jorge De Los Santos       
-%                        E-mail: delossantosmfq@gmail.com        
-%                      Blog : http://matlab-typ.blogspot.mx      
-%                                     Rev 0.0.1                   
-%                                 Fecha: 20/10/2014
-%                 ================================================
     
     properties
         hDlg;

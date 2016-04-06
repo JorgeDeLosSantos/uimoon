@@ -5,9 +5,9 @@ function FrameDemo
 % License: MIT License
 %
 app = Frame('App');
-app.Centre(true)
+app.Center()
 app.Resize(false);
 app.SetColor(rand(1,3));
 app.SetTitle('Example');
-app.SetIcon('images/icono.png');
+app.SetIcon('images/icon.png');
 end
