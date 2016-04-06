@@ -1,10 +1,9 @@
 function MiniCalc
-% MiniCalc / Demo for GUIOOD Toolbox
-% 
-% Author: Jorge De Los Santos
-% Version: 0.1.0
-% E-mail: delossantosmfq@gmail.com
-% License: BSD License
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
 
 app = Frame('Mini Calculadora',[220 100]);
 app.SetLayout('grid',5,3,1); % Set main layout: grid. 5 rows and 3 columns

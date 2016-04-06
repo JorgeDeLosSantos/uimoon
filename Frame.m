@@ -53,7 +53,8 @@ classdef Frame < Container
             end
         end
         
-        function Centre(obj,state)
+        function Center(obj,state)
+            if nargin < 2; state = true; end; % app.Center() <- True default
             if state
                 centerfig(obj.hCont);
             end

@@ -1,12 +1,12 @@
 clear;clc;
 % Titles
-MSGBOX_TITLE = 'GUIOOD Toolbox';
+MSGBOX_TITLE = 'uimoon Toolbox';
 APP_TITLE = 'App';
-AXES_TITLE = 'Gráfica';
+AXES_TITLE = 'Graph';
 
 % Components
 STR_BUTTON = 'Click';
-STR_CHOICES = {'Uno','Dos','Tres','Cuatro'};
+STR_CHOICES = {'One','Two','Three','Four'};
 
 % Etiquetas ejes
 LABEL_XAXIS = 'X';
@@ -17,9 +17,8 @@ LABEL_ZAXIS = 'Z';
 EMPTY_STRING = char(32);
 
 % Error mensajes
-ERR_INVALID_STR = 'String incorrecto';
-ERR_INVALID_INPUT = 'Argumentos de entrada incorrectos';
-ERR_INVALID_COLOR = 'Color incorrecto';
-
+ERR_INVALID_STR = 'Invalid string';
+ERR_INVALID_INPUT = 'Invalid input arguments';
+ERR_INVALID_COLOR = 'Invalid color';
 
 save('constants.mat');

@@ -2,10 +2,9 @@ function SetColor(obj,color)
 % Axes/SetColor
 %
 
-
 try
     set(obj.hAxes,'Color',color);
-catch
-    error('Color incorrecto');
+catch err
+    error('Invalid color');
 end
 end

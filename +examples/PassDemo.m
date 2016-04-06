@@ -1,4 +1,9 @@
 function PassDemo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
 app = Frame('Pass Demo',[200 80]);
 app.SetLayout('v',10);
 pw = PasswordField();
@@ -11,6 +16,7 @@ app.AddMany(pw,bt);
         passw_intro = pw.GetPassword();
         if strcmp(passw_real,passw_intro)
             helpdlg('Contraseña correcta');
+            app.Close()
         else
             warndlg('Contraseña incorrecta, intente nuevamente');
         end

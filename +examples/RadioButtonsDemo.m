@@ -1,11 +1,16 @@
 function RadioButtonsDemo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
 app = Frame('Radio Button Demo');
-rb = RadioButtonMenu('Seno | Coseno | Tangente');
+rb = RadioButtonMenu('Sine | Cosine | Tangent');
 rb.SetSelectionChange(@change_fcn);
 app.Add(rb);
 
     function change_fcn(~,~)
         curr_str = rb.GetCurrentText();
-        fprintf('Has presionado %s\n',curr_str);
+        fprintf('You have pressed %s\n',curr_str);
     end
 end

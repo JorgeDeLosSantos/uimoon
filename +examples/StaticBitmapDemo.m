@@ -1,4 +1,9 @@
 function StaticBitmapDemo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
 app = Frame('');
 X1 = imread('saturn.png');
 bmp1 = StaticBitmap(X1);

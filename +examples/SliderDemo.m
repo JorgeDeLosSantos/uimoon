@@ -1,4 +1,9 @@
 function SliderDemo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
 app = Frame('Slider Demo');
 app.SetLayout('vertical',2);
 
@@ -10,9 +15,9 @@ end
 
     function Cllbck_fcn(~,~)
         all_sliders = util.FindByClass('Slider');
-%         assignin('base','all_sliders',all_sliders);
+        disp(all_sliders)
         all_values = arrayfun(@(x) x.GetValue(),all_sliders{1},'un',0);
         suma = sum(cell2mat(all_values));
-        fprintf('Suma = %d \n\n',suma);
+        fprintf('Suma = %g \n\n',suma);
     end
 end
