@@ -1,4 +1,4 @@
-classdef Axes < Component
+classdef Axes < uimoon.core.Component
     % AXES
     
     properties

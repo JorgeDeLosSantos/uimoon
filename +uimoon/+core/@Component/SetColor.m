@@ -9,9 +9,6 @@ function SetColor(obj,varargin)
 %
 %
 
-
-cte_ = load('private/constants.mat');
-
 if length(varargin) == 1
     if isa(varargin{1},'char')
         color_ = hex2rgb(varargin{1});
@@ -19,7 +16,7 @@ if length(varargin) == 1
     else
         try
             set(obj.hComp,'BackGroundColor',varargin{1});
-        catch
+        catch err
             error(ERR_INVALID_INPUTS); % ##### ON REV
         end
     end

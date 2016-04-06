@@ -4,6 +4,8 @@ function MenuDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Menu Demo');
 m_archivo = Menu('File','');
 m_archivo.AddItem(Menu('Open',''));

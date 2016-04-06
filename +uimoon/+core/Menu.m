@@ -32,12 +32,12 @@ classdef Menu
         end
         
         function SetParent(obj,parent)
-            if isa(parent,'Frame')
+            if isa(parent,'uimoon.core.Frame')
                 parent_ = parent.hCont;
-            elseif isa(parent,'Menu')
+            elseif isa(parent,'uimoon.core.Menu')
                 parent_ = parent.hMenu;
             else
-                error('Verifica el objeto padre');
+                error('Invalid parent object');
             end
             set(obj.hMenu,'Parent',parent_);
         end

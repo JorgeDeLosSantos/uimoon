@@ -1,12 +1,13 @@
-classdef ListBox < Component
-    % ListBox
+classdef ComboBox < uimoon.core.Component
+    % ComboBox
     
     properties
+        
     end
     
     methods
-        function obj = ListBox(str)
-            obj.hComp = uicontrol('Style','listbox',...
+        function obj = ComboBox(str)
+            obj.hComp = uicontrol('Style','popupmenu',...
                 'String',str);
             obj.str_ = str;
         end

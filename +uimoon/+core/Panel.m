@@ -1,4 +1,4 @@
-classdef Panel < Container
+classdef Panel < uimoon.core.Container
     % Panel
     
     properties

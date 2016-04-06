@@ -1,4 +1,4 @@
-classdef Label < Component
+classdef Label < uimoon.core.Component
     % Label class
     
     properties

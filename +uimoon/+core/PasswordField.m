@@ -1,4 +1,4 @@
-classdef PasswordField < Component
+classdef PasswordField < uimoon.core.Component
     % PasswordField
     
     properties

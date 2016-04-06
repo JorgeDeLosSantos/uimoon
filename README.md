@@ -19,6 +19,8 @@ function FrameDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('App');
 app.Centre(true)
 app.Resize(false);
@@ -40,6 +42,7 @@ function AxesDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
 
 app = Frame('Demo Axes',[800,300]);
 app.Center(); % Center Frame
@@ -74,7 +77,7 @@ end
 
 ### How to install?
 
-Download or clone this repository and add the folder project `uimoon` to the MATLAB path.
-
+Downloads or clones this repository and add the folder project to the MATLAB path, or "installs" the 
+toolbox running the `uimoon_install` script.
 
 ### Contributing

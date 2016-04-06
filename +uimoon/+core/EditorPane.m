@@ -1,4 +1,4 @@
-classdef EditorPane < Component
+classdef EditorPane < uimoon.core.Component
     
     
     properties

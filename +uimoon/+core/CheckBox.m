@@ -1,4 +1,4 @@
-classdef CheckBox < Component
+classdef CheckBox < uimoon.core.Component
     % Component
     %
     %

@@ -4,6 +4,8 @@ function Table2HTMLDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Table Export Demo');
 opts.PageTitle = 'Ejemplo'; % Title of HTML page
 opts.TableTitle = '<font color="#0000FF">Datos exportados</font>'; 

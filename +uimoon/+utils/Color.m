@@ -26,9 +26,9 @@ classdef Color < handle
         function rgb = hex2rgb(obj,hex)
             hex = strrep(hex, '#', '');
             assert(length(hex)==6, 'Invalid hexadecimal value');
-            r = hex2dec(hex[1:2]);
-            g = hex2dec(hex[3:4]);
-            b = hex2dec(hex[5:6]);
+            r = hex2dec(hex(1:2));
+            g = hex2dec(hex(3:4));
+            b = hex2dec(hex(5:6));
             rgb = [r,g,b]/255; % Normalized
         end
     end

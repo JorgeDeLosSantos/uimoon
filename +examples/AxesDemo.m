@@ -4,6 +4,7 @@ function AxesDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
 
 app = Frame('Demo Axes',[800,300]);
 app.Center(); % Center Frame

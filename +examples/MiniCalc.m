@@ -4,6 +4,7 @@ function MiniCalc
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
 
 app = Frame('Mini Calculadora',[220 100]);
 app.SetLayout('grid',5,3,1); % Set main layout: grid. 5 rows and 3 columns

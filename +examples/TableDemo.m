@@ -4,6 +4,8 @@ function TableDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Table Demo',[400 200]);
 app.SetLayout('grid',1,1,1);
 tab = Table(rand(4),{'A','B','C','D'});

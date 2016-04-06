@@ -4,6 +4,8 @@ function RadioButtonsDemo2
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Radio Button Demo 2');
 rb = RadioButtonMenu('Sine | Cosine | Tangent');
 rb.SetSelectionChange(@change_fcn);

@@ -1,4 +1,4 @@
-classdef Frame < Container
+classdef Frame < uimoon.core.Container
     % Frame
     %
     % Create a frame based on figure MATLAB Object.

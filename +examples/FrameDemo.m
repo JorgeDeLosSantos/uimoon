@@ -4,6 +4,8 @@ function FrameDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('App');
 app.Center()
 app.Resize(false);

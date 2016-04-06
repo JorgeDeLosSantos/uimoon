@@ -1,4 +1,4 @@
-classdef TextField < Component
+classdef TextField < uimoon.core.Component
     
     properties
         % Super - properties

@@ -1,4 +1,4 @@
-classdef RadioButtonMenu < Component
+classdef RadioButtonMenu < uimoon.core.Component
     properties
     end
     

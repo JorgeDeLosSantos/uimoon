@@ -1,4 +1,4 @@
-classdef Button < Component
+classdef Button < uimoon.core.Component
     % Button class
     %
     % Sintaxis:

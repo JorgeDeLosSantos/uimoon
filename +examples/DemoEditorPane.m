@@ -4,6 +4,8 @@ function DemoEditorPane
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Demo Editor Pane', [400,300]);
 app.Center();
 app.SetLayout('vertical',5);

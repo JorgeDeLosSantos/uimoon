@@ -4,6 +4,8 @@ function PressDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('App 1');
 app.SetButtonDown(@bt_down);
 

@@ -1,4 +1,4 @@
-classdef Canvas < Component
+classdef Canvas < uimoon.core.Component
     % CANVAS
     
     properties

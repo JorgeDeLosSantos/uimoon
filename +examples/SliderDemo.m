@@ -4,6 +4,8 @@ function SliderDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Slider Demo');
 app.SetLayout('vertical',2);
 

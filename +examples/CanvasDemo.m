@@ -4,6 +4,8 @@ function CanvasDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Canvas Demo',[400 300]);
 app.SetLayout('horizontal',5);
 

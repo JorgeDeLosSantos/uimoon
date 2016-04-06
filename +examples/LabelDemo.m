@@ -3,6 +3,8 @@ function LabelDemo% Demo for UIMOON 0.1.0
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Label Demo',[200 100]);
 app.SetLayout('horizontal',2);
 lab1 = Label('One Label');

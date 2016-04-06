@@ -4,6 +4,8 @@ function PassDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
+
 app = Frame('Pass Demo',[200 80]);
 app.SetLayout('v',10);
 pw = PasswordField();

@@ -4,6 +4,7 @@ function ButtonDemo
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+import uimoon.core.*
 
 app = Frame('Button Demo');
 bt = Button('Botón');
