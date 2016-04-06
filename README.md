@@ -1,6 +1,6 @@
 ## uimoon
 
-MATLAB Graphical User Interfaces with Object Oriented Design
+MATLAB Graphical User Interfaces with Object Oriented Design, inspired in Java and wxPython syntax.
 
 
 ### Project status
@@ -30,7 +30,7 @@ app.SetIcon('images/icono.png');
 end
 ```
 
-![](images/frame1.PNG)
+![](+examples/images/frame1.PNG)
 
 
 **Using Axes class**
@@ -73,7 +73,7 @@ ax3.SetColor([0,250,200]/255);
 end
 ```
 
-![](images/axes1.PNG)
+![](+examples/images/axes1.PNG)
 
 ### How to install?
 
