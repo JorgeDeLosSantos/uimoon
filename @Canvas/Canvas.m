@@ -1,0 +1,23 @@
+classdef Canvas < Component
+    % CANVAS
+    
+    properties
+        hCanvas;
+    end
+    
+    methods
+        function obj = Canvas()
+            obj.hComp = uipanel('BackgroundColor','w',...
+                'Units','Pixels');
+            p_pos = get(obj.hComp,'Position');
+            obj.hCanvas = axes('Parent',obj.hComp,...
+                'NextPlot','Add',...
+                'XTick',[],'YTick',[],...
+                'Position',[0 0 1 1],...
+                'Visible','off',...
+                'XLim',[0 p_pos(3)],...
+                'YLim',[0 p_pos(4)]);
+        end
+    end
+end
+

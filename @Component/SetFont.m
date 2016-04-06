@@ -1,0 +1,19 @@
+function SetFont(obj,varargin)
+if nargin == 1
+    FONT = varargin{1};
+    set(obj.hComp,'FontName',FONT{1},...
+        'FontSize',FONT{2},...
+        'ForegroundColor',FONT{3},...
+        'FontWeight',FONT{4});
+else
+    NAME = varargin{1};
+    SIZE = varargin{2};
+    COLOR = varargin{3};
+    WEIGHT = varargin{4};
+    set(obj.hComp,'FontName',NAME,...
+        'FontSize',SIZE,...
+        'ForegroundColor',COLOR,...
+        'FontWeight',WEIGHT);
+end
+
+end
