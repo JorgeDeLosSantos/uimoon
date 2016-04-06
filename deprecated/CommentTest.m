@@ -1,4 +1,0 @@
-function CommentTest
-
-
-end

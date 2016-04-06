@@ -34,3 +34,6 @@
 
 # Test folder
 _test
+
+# Deprecated folder
+_deprecated
