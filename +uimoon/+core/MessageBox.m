@@ -32,7 +32,8 @@ classdef MessageBox
             end
             if strcmp(style,'custom') && nargin < 4
                 % Undefined icon, use a empty image ...
-                icon = zeros(32,32,3);
+                icon = '';
+                icon_data = zeros(32,32,3);
             end
             
             obj.msg_ = msg;
@@ -48,7 +49,14 @@ classdef MessageBox
                 case 'info'
                     obj.hMsg = helpdlg(msg,title);
                 case 'custom'
-                    obj.hMsg = msgbox(msg,title,'custom',icon);
+                    if ~isempty(icon)
+                        try
+                            icon_data = imread(icon);
+                        catch err
+                            icon_data = zeros(32,32,3);
+                        end
+                    end
+                    obj.hMsg = msgbox(msg,title,'custom',icon_data);
                 otherwise
                     % pass
             end

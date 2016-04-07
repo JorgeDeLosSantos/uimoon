@@ -7,7 +7,7 @@ function TableDemo
 import uimoon.core.*
 
 app = Frame('Table Demo',[400 200]);
-app.SetLayout('grid',1,1,1);
+app.SetLayout('h',2);
 tab = Table(rand(4),{'A','B','C','D'});
 tab.SetColor([0.7,0.8,0.9;0.8,0.9,0.8]);
 app.Add(tab);

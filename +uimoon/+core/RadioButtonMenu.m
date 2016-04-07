@@ -4,13 +4,14 @@ classdef RadioButtonMenu < uimoon.core.Component
     
     methods
         function obj = RadioButtonMenu(str)
+            import uimoon.utils.* % Import utils module}
             if ~isa(str,'cell')
                 try
-                    str = String.Split(str,'|');
+                    str = String.split(str,'|');
                     for i=1:length(str)
                         str{i} = strtrim(str{i});
                     end
-                catch %#ok<CTCH>
+                catch %#ok
                     error('String no válido');
                 end
             end

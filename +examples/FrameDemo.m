@@ -11,5 +11,5 @@ app.Center()
 app.Resize(false);
 app.SetColor(rand(1,3));
 app.SetTitle('Example');
-app.SetIcon('images/icon.png');
+app.SetIcon('+examples/images/icon.png');
 end

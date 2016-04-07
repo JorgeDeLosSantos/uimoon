@@ -11,7 +11,7 @@ classdef String < handle
     end
     
     methods (Static=true)
-        function s = Split(cad,delimiter)
+        function s = split(cad,delimiter)
             % Split string
             if nargin==1
                 % Default delimiter -> Space

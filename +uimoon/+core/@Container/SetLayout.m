@@ -1,5 +1,5 @@
 function SetLayout(obj,varargin)
-% Container.SetLayout
+% Container/SetLayout
 %
 % Configura, de forma automática, la distribución de los 
 % controles gráficos dentro de un objeto Container.

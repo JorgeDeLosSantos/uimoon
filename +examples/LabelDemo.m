@@ -4,12 +4,13 @@ function LabelDemo% Demo for UIMOON 0.1.0
 % License: MIT License
 %
 import uimoon.core.*
+import uimoon.utils.*
 
 app = Frame('Label Demo',[200 100]);
 app.SetLayout('horizontal',2);
 lab1 = Label('One Label');
 lab2 = Label('Other label');
-lab1.SetColor(util.Color.RED);
+lab1.SetColor(Color.RED);
 app.Add(lab1);
 app.Add(lab2);
 end
