@@ -2,6 +2,7 @@
 
 MATLAB Graphical User Interfaces with Object Oriented Design, inspired in Java and wxPython syntax.
 
+![](+uimoon/+images/uimoon_logo.PNG)
 
 ### Project status
 
@@ -30,7 +31,6 @@ app.SetIcon('images/icono.png');
 end
 ```
 
-![](+examples/images/frame1.PNG)
 
 
 **Using Axes class**
@@ -81,3 +81,5 @@ Downloads or clones this repository and add the folder project to the MATLAB pat
 toolbox running the `uimoon_install` script.
 
 ### Contributing
+
+If you find a bug, a bad feature, or have a enhancement proposal, please open a issue and comment it.
