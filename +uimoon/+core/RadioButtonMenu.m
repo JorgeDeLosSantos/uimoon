@@ -4,7 +4,7 @@ classdef RadioButtonMenu < uimoon.core.Component
     
     methods
         function obj = RadioButtonMenu(str)
-            import uimoon.utils.* % Import utils module}
+            import uimoon.utils.* % Import utils module
             if ~isa(str,'cell')
                 try
                     str = String.split(str,'|');

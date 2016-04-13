@@ -37,9 +37,10 @@ classdef Frame < uimoon.core.Container
             %             centerfig(obj.hCont);
             obj.size_=size;
             obj.name_=name;
-            obj.color_=get(obj.hCont,'Color');
+            obj.color_= uimoon.utils.Color(0.96,0.96,0.96);
             obj.width_=size(1);
             obj.height_=size(2);
+            obj.SetColor(obj.color_);
         end
         
         function SetIcon(obj,iconfile)

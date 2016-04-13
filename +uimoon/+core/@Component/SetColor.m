@@ -8,7 +8,7 @@ function SetColor(obj,varargin)
 %
 %
 %
-
+disp(varargin);
 if nargin == 2 && isa(varargin{1},'uimoon.utils.Color')
     % Color class
     color_ = varargin{1};
@@ -35,4 +35,5 @@ end
 %         c = [RED GREEN BLUE]/255;
         c = uimoon.utils.Color(RED/255,GREEN/255,BLUE/255);
     end
+obj.color_ = color_;
 end
