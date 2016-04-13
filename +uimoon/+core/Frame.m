@@ -73,7 +73,7 @@ classdef Frame < uimoon.core.Container
         end
         
         function SetMenuBar(obj, menubar)
-            set(menubar.hMB,'Parent',obj.hCont);
+            set(menubar.hComp,'Parent',obj.hCont);
         end
     end
 end

@@ -29,5 +29,6 @@ app.Add(rb);
             Y = tan(X);
             ax.Plot2D(X,Y);
         end
+        ax.SetGrid(true);
     end
 end

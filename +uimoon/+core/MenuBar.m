@@ -1,13 +1,13 @@
-classdef MenuBar
+classdef MenuBar < uimoon.core.Component
     
     
     properties
-        hMB;
+        %
     end
     
     methods
         function obj = MenuBar(varargin)
-            obj.hMB = uimenu();
+            obj.hComp = uimenu('visible','off');
             obj.Add(varargin);
         end
         
@@ -15,10 +15,11 @@ classdef MenuBar
             for ii = 1:length(varargin)
                 hA = varargin{ii};
                 if isa(hA,'Menu')
-                    hA.SetParent(obj.hMB);
+                    hA.SetParent(obj.hComp);
                 end
             end
         end
+        
     end
     
 end

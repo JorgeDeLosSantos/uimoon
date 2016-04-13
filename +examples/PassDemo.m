@@ -14,13 +14,14 @@ bt.SetCallback(@verificar);
 app.AddMany(pw,bt);
 
     function verificar(varargin)
+        import uimoon.core.*
         passw_real = '123';
         passw_intro = pw.GetPassword();
         if strcmp(passw_real,passw_intro)
-            helpdlg('Contraseña correcta');
+            MessageBox('Correct password','UIMOON Demo','info');
             app.Close()
         else
-            warndlg('Contraseña incorrecta, intente nuevamente');
+            MessageBox('Invalid password, try again','UIMOON Demo','error');
         end
     end
 end
