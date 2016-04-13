@@ -2,7 +2,7 @@
 
 MATLAB Graphical User Interfaces with Object Oriented Design, inspired in Java and wxPython syntax.
 
-![](+uimoon/+images/uimoon_logo.PNG)
+![](+uimoon/+images/uimoon_logo.png)
 
 ### Project status
 
