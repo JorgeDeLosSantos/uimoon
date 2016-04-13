@@ -1,7 +1,7 @@
 function SetLayout(obj,varargin)
 % Container/SetLayout
 %
-% Configura, de forma automática, la distribución de los 
+% Configura, de forma automática, la distribución de los
 % controles gráficos dentro de un objeto Container.
 %
 % LAYOUTS DISPONIBLES:
@@ -9,17 +9,17 @@ function SetLayout(obj,varargin)
 %         'vertical'
 %         'horizontal'
 %         'grid'
-% 
+%
 % ARGUMENTOS VARIABLES (VARARGIN)
 % Para el caso 'vertical' y 'horizontal' habrá de pasarse
 % como argumento extra el espacio de separación en pixeles
 % entre cada uno de los elementos, de lo contrario se tomará
 % el valor de 5px por default.
-% 
+%
 % Para el tipo 'grid' deben especificarse el espacio de separación,
-% el número de filas y el número de columnas. Es 'estrictamente' 
+% el número de filas y el número de columnas. Es 'estrictamente'
 % necesario el colocar todos los argumentos.
-% 
+%
 % SINTAXIS:
 %
 %           obj.SetLayout('vertical');
@@ -69,11 +69,11 @@ switch lower(layout)
         obj.layout_ = struct('name','horizontal',...
             'border',border);
     case {'grid','g'}
-        gridSizer();
         obj.layout_ = struct('name','grid',...
             'border',border,...
             'rows',rows_,...
             'cols',cols_);
+        gridSizer();
     otherwise
         warning('Layout no definido');
         verticalSizer(); % Default layout
@@ -109,13 +109,23 @@ end
     end
 
     function gridSizer
+        CW = obj.width_; % Container width
+        CH = obj.height_; % Container height
+        nrows = obj.layout_.rows;
+        ncols = obj.layout_.cols;
+        
+        ANCHO = ((CW/(ncs/nrows))-(border*((ncs+1)/2)))/CW;
+        ALTO = ((CH/(ncs/ncols))-(border*((ncs+1)/2)))/CH;
+        KX = border/CW;
+        KY = border/CH;
         k=1;
         for i=rows_:-1:1
             for j=1:cols_
                 try
                     set(hcs(ncs-k+1),'units','normalized',...
-                        'Position',[(j-1)*(1/cols_) (i-1)*(1/rows_) 1/cols_ 1/rows_]);
+                        'Position',[(j-1)*(1/cols_)+KX (i-1)*(1/rows_)+KY ANCHO ALTO]);
                     k = k + 1;
+                    % [(j-1)*(1/cols_) (i-1)*(1/rows_) 1/cols_ 1/rows_]
                 catch err %#ok
                     % pass
                 end
