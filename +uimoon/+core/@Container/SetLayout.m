@@ -103,20 +103,20 @@ end
         POSY = border/CH;
         
         for i=1:ncs
-            set(hcs(i),'units','normalized',...
+            set(hcs(ncs-i+1),'units','normalized',...
                 'Position',[((i-1)*1/ncs)+POSX POSY ANCHO ALTO]);
         end
     end
 
     function gridSizer
         k=1;
-        for i=1:cols_
-            for j=1:rows_
+        for i=rows_:-1:1
+            for j=1:cols_
                 try
-                    set(hcs(k),'units','normalized',...
-                        'Position',[(i-1)*(1/cols_) (j-1)*(1/rows_) 1/cols_ 1/rows_]);
+                    set(hcs(ncs-k+1),'units','normalized',...
+                        'Position',[(j-1)*(1/cols_) (i-1)*(1/rows_) 1/cols_ 1/rows_]);
                     k = k + 1;
-                catch
+                catch err %#ok
                     % pass
                 end
             end

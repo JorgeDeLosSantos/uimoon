@@ -6,8 +6,9 @@ function MiniCalc
 %
 import uimoon.core.*
 
-app = Frame('Mini Calculadora',[220 100]);
-app.SetLayout('grid',5,3,1); % Set main layout: grid. 5 rows and 3 columns
+app = Frame('Mini Calculadora',[250 150]);
+app.SetLayout('v',2); % Set main layout: grid. 5 rows and 3 columns
+app.Center()
 p1 = Panel(); 
 p2 = Panel();
 p3 = Panel();
@@ -19,8 +20,11 @@ lb2 = Label('# 2');
 num1 = TextField();
 num2 = TextField();
 
-p1.AddMany(num1,lb1); % Add controls to Panel p1
-p2.AddMany(num2,lb2); % Add controls to Panel p2
+p1.AddMany(lb1,num1); % Add controls to Panel p1
+p2.AddMany(lb2,num2); % Add controls to Panel p2
+
+p1.SetLayout('horizontal',5);
+p2.SetLayout('horizontal',5);
 
 % Buttons
 bt1 = Button('+');
@@ -37,6 +41,7 @@ bt3.SetCallback(@calcular_fcn);
 bt4.SetCallback(@calcular_fcn);
 
     function calcular_fcn(~,~,obj)
+        import uimoon.core.*
         a = num1.GetText(); % Get value of "num1" Label
         b = num2.GetText(); % Get value of "num2" Label
         oper = obj.GetText(); % Get the operator of current Button clicked
