@@ -9,7 +9,7 @@ import uimoon.core.*
 app = Frame('App');
 app.Center()
 app.Resize(false);
-app.SetColor(rand(1,3));
+app.SetColor();
 app.SetTitle('Example');
 app.SetIcon('+examples/images/icon.png');
 end

@@ -9,17 +9,17 @@ import uimoon.core.*
 app = Frame('Slider Demo');
 app.SetLayout('vertical',2);
 
-for i=1:5
+for i=1:7
     sld(i) = Slider(0,10,randi(10));
     sld(i).SetCallback(@Cllbck_fcn);
     app.Add(sld(i));
 end
 
     function Cllbck_fcn(~,~)
-        all_sliders = util.FindByClass('Slider');
-        disp(all_sliders)
+        import uimoon.utils.* % For Finder
+        all_sliders = Finder.FindByClass('uimoon.core.Slider');
         all_values = arrayfun(@(x) x.GetValue(),all_sliders{1},'un',0);
         suma = sum(cell2mat(all_values));
-        fprintf('Suma = %g \n\n',suma);
+        fprintf('Sum = %g \n\n',suma);
     end
 end
