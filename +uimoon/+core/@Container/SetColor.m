@@ -1,5 +1,5 @@
 function SetColor(obj,varargin)
-% Container.SetColor
+% Container/SetColor
 %
 % Modifica el color de fondo de un objeto de la clase
 % Container.
@@ -24,23 +24,21 @@ function SetColor(obj,varargin)
 %
 %
 
-if length(varargin{1}) > 1
-    % util Color properties
+
+
+
+if length(varargin{1}) > 1 && ~isa(varargin{1},'uimoon.utils.Color')
+    % Color class
     color_ = varargin{1};
-    try 
-        set(obj.hCont,'Color',color_);
-    catch
-        set(obj.hCont,'BackG',color_);
-    end
-else
-    % Scalar values
-    RED=varargin{1};
-    GREEN=varargin{2};
-    BLUE=varargin{3};
-    try
-        set(obj.hCont,'Color',[RED GREEN BLUE]);
-    catch
-        set(obj.hCont,'BackG',[RED GREEN BLUE]);
-    end
+elseif nargin==3
+    % RGB vals
+    color_ = uimoon.utils.Color(varargin{1},varargin{2},varargin{3});
 end
+
+try
+    set(obj.hCont,'Color',color_.rgb_);
+catch %#ok
+    set(obj.hCont,'Background',color_.rgb_);
+end
+
 end

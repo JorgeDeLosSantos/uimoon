@@ -1,4 +1,4 @@
-classdef Slider < Component
+classdef Slider < uimoon.core.Component
     %SLIDER Class
     
     properties

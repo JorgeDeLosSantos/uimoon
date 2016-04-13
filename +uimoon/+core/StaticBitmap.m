@@ -1,4 +1,4 @@
-classdef StaticBitmap < Component
+classdef StaticBitmap < uimoon.core.Component
     % StaticBitmap
     
     properties

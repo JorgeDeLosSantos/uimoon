@@ -1,4 +1,4 @@
-classdef Spinner < Component
+classdef Spinner < uimoon.core.Component
     % Spinner
     %
     %
