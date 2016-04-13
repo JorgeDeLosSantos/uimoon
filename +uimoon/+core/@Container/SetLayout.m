@@ -80,16 +80,26 @@ switch lower(layout)
 end
 
     function verticalSizer
+        import uimoon.utils.*
+        error('Feature unavailable, currently in development');
         CW = obj.width_;
         CH = obj.height_;
         ANCHO = (CW-(2*border))/CW;
-        ALTO = ((CH/ncs)-(border*((ncs+1)/2)))/CH;
-        POSX = border/CW;
-        POSY = border/CH;
+%         ALTO = ((CH/ncs)-(border*((ncs+1)/2)))/CH;
+        KX = border/CW;
+        KY = border/CH;
         
         for i=1:ncs
+            prop = getappdata(hcs(i),'Proportion');
+            ALTO = (prop*(CH)-(border*((ncs+1)/2)))/CH;
+            try
+                POSY = (CH-border)/CH - AppData.SumAppData(hcs(1:i-1),'Proportion');
+            catch err
+                POSY = (CH-border)/CH;
+            end
+            disp(POSY);
             set(hcs(i),'units','normalized',...
-                'Position',[POSX (i-1)*1/ncs+POSY ANCHO ALTO]);
+                'Position',[KX POSY+KY ANCHO ALTO]);
         end
     end
 

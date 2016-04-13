@@ -1,4 +1,4 @@
-classdef MessageBox
+classdef MessageBox < uimoon.core.Dialog
     % MessageBox
     % 
 	% Syntax:

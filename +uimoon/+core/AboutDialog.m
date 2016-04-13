@@ -1,15 +1,13 @@
-classdef AboutDialog < handle
+classdef AboutDialog < uimoon.core.Dialog
 % An AboutDialog class
 % 
 % UIMOON 0.1.0
 % Author: Pedro Jorge De Los Santos <delossantosmfq@gmail.com>
-% Blog: larysa-tech.blogspot.mx
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
-    
+
     properties
-        hDlg;
         name_;
         version_;
         description_;
@@ -53,7 +51,8 @@ classdef AboutDialog < handle
             uicontrol('style','text',...
                 'String',obj.description_,...
                 'Units','Normalized',...
-                'Position',[0 0.4 1 0.42]);
+                'Position',[0 0.4 1 0.42],...
+                'ForegroundColor',[0.5,0.8,0.5]);
             
             uicontrol('style','text',...
                 'String',obj.authors_,...
@@ -80,6 +79,6 @@ classdef AboutDialog < handle
             set(findobj('Style','text'),'BackG',get(obj.hDlg,'Color'));
         end
     end
-    
+
 end
 

@@ -6,10 +6,10 @@ function App_01_Demo
 %
 import uimoon.core.*
 
-app = Frame('App',[400,300]);
+app = Frame('App',[300,120]);
 app.Center();
 
-app.SetLayout('g',10,3,2);
+app.SetLayout('g',3,3,2);
 
 lb1 = Label('Name');
 txt1 = TextField('');

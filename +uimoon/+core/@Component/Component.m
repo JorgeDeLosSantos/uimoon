@@ -10,6 +10,7 @@ classdef Component < handle
         width_;
         height_;
         parent_;
+        proportion_;
     end
     
     properties (Constant)

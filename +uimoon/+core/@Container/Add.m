@@ -1,8 +1,8 @@
-function Add(obj,uic)
+function Add(obj,uic,proportion)
 % Add
 %
-%
-
+% 
+uic.SetProportion(proportion);
 try
     set(uic.hComp,    ...
         'Parent',    obj.hCont,...
