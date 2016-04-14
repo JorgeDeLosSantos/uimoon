@@ -31,7 +31,7 @@ app.SetIcon('images/icono.png');
 end
 ```
 
-
+![](+examples/images/frame1.PNG)
 
 **Using Axes class**
 
