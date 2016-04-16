@@ -13,5 +13,5 @@ tab = Table(rand(4),{'A','B','C','D'});
 tab.SetColor([0.6,0.8,0.9;
               0.8,0.9,0.8]);
 tab.SetFont(Font('Arial',10,'bold'));
-app.Add(tab);
+app.Add(tab,1);
 end
