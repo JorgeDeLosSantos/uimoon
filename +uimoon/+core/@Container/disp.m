@@ -1,3 +1,3 @@
 function disp(obj)
-disp(obj.hCont);
+disp(class(obj));
 end

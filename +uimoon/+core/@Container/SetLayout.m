@@ -56,7 +56,8 @@ else
     border = 5;
 end
 
-hcs = findobj('parent',obj.hCont); % array of handles
+%hcs = findobj('parent',obj.hCont); % array of handles
+hcs = obj.children_;
 ncs = length(hcs); % length of " " "
 
 switch lower(layout)
@@ -75,46 +76,50 @@ switch lower(layout)
             'cols',cols_);
         gridSizer();
     otherwise
-        warning('Layout no definido');
+        warning('Undefined layout');
         verticalSizer(); % Default layout
 end
 
     function verticalSizer
-        import uimoon.utils.*
-        error('Feature unavailable, currently in development');
-        CW = obj.width_;
-        CH = obj.height_;
-        ANCHO = (CW-(2*border))/CW;
-%         ALTO = ((CH/ncs)-(border*((ncs+1)/2)))/CH;
-        KX = border/CW;
-        KY = border/CH;
+        CW = obj.width_; % Container width
+        CH = obj.height_; % Container height
+        
+        W_ = (CW-(2*border))/CW;
+        CX = border/CW;
+        CY = border/CH;
         
         for i=1:ncs
-            prop = getappdata(hcs(i),'Proportion');
-            ALTO = (prop*(CH)-(border*((ncs+1)/2)))/CH;
-            try
-                POSY = (CH-border)/CH - AppData.SumAppData(hcs(1:i-1),'Proportion');
-            catch err
-                POSY = (CH-border)/CH;
+            prop = hcs{i}.proportion_; % Current proportion
+            POSY = 1 - sum(obj.childrenproportions_(1:i)); % Y-Position (Normalized)
+            H_ = (prop*(CH)-(border*((ncs+1)/2)))/CH; % Height
+            if isa(hcs{i},'uimoon.core.Container')
+                cmp_ref = hcs{i}.hCont;
+            else
+                cmp_ref = hcs{i}.hComp;
             end
-            disp(POSY);
-            set(hcs(i),'units','normalized',...
-                'Position',[KX POSY+KY ANCHO ALTO]);
+            set(cmp_ref,'units','normalized',...
+                'Position',[CX POSY+CY W_ H_]);
         end
     end
 
     function horizontalSizer
         CW = obj.width_; % Container width
         CH = obj.height_; % Container height
-        
-        ANCHO = ((CW/ncs)-(border*((ncs+1)/2)))/CW;
-        ALTO = (CH-(2*border))/CH;
-        POSX = border/CW;
-        POSY = border/CH;
+        H_ = (CH-(2*border))/CH;
+        CX = border/CW;
+        CY = border/CH;
         
         for i=1:ncs
-            set(hcs(ncs-i+1),'units','normalized',...
-                'Position',[((i-1)*1/ncs)+POSX POSY ANCHO ALTO]);
+            prop = hcs{i}.proportion_; % Current proportion
+            POSX = sum(obj.childrenproportions_(1:i-1)); % X-Position (Normalized)
+            W_ = (prop*(CW)-(border*((ncs+1)/2)))/CW; % Width
+            if isa(hcs{i},'uimoon.core.Container')
+                cmp_ref = hcs{i}.hCont;
+            else
+                cmp_ref = hcs{i}.hComp;
+            end
+            set(cmp_ref,'units','normalized',...
+                'Position',[POSX+CX CY W_ H_]);
         end
     end
 
@@ -132,7 +137,7 @@ end
         for i=rows_:-1:1
             for j=1:cols_
                 try
-                    set(hcs(ncs-k+1),'units','normalized',...
+                    set(hcs{k}.hComp,'units','normalized',...
                         'Position',[(j-1)*(1/cols_)+KX (i-1)*(1/rows_)+KY ANCHO ALTO]);
                     k = k + 1;
                     % [(j-1)*(1/cols_) (i-1)*(1/rows_) 1/cols_ 1/rows_]

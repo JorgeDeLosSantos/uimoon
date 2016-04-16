@@ -1,22 +1,11 @@
 function Add(obj,uic,proportion)
 % Add
 %
-% 
-uic.SetProportion(proportion);
-try
-    set(uic.hComp,    ...
-        'Parent',    obj.hCont,...
-        'Visible',   'on' );
-catch
-    try
-        set(uic.hCont,    ...
-            'Parent',    obj.hCont,...
-            'Visible',   'on' );
-    catch
-        set(uic.hTable,    ...
-            'Parent',    obj.hCont,...
-            'Visible',   'on' );
-    end
+%
+if nargin<3
+    proportion = 0.1;
 end
+uic.SetProportion(proportion);
+obj.AddChild(uic,proportion);
 obj.SetLayout(obj.GetLayout());
 end
