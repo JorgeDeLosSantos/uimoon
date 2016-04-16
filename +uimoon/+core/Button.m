@@ -27,6 +27,10 @@ classdef Button < uimoon.core.Component
         function SetCallback(obj,fun)
             set(obj.hComp,'Callback',{fun,obj});
         end
+        
+        function disp(obj)
+            fprintf('%s\n%s\n',class(obj),obj.str_);
+        end
     end
     
 end
