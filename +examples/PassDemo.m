@@ -11,9 +11,11 @@ app.SetLayout('v',10);
 pw = PasswordField();
 bt = Button('Go!!!');
 bt.SetCallback(@verificar);
-app.AddMany(pw,bt);
+app.Add(pw,0.5);
+app.Add(bt,0.5);
 
     function verificar(varargin)
+        disp(varargin)
         import uimoon.core.*
         passw_real = '123';
         passw_intro = pw.GetPassword();

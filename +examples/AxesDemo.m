@@ -15,7 +15,9 @@ ax1 = Axes();
 ax2 = Axes();
 ax3 = Axes();
 
-app.AddMany(ax1,ax2,ax3);
+app.Add(ax1, 1/3);
+app.Add(ax2, 1/3);
+app.Add(ax3, 1/3);
 
 x = linspace(0,10);
 y = cos(x);

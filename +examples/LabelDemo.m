@@ -11,9 +11,9 @@ app = Frame('Label Demo',[200 100]);
 app.SetLayout('horizontal',2);
 lab1 = Label('One Label');
 lab2 = Label('Other label');
-lab1.SetColor(Color.RED);
-lab2.SetColor('#00fafa');
+lab1.SetColor(Color.RED); % Using Color class 
+lab2.SetColor('#00fafa'); % Using hexadecimal value
 lab2.SetFont(Font('Arial',14,'bold'));
-app.Add(lab1);
-app.Add(lab2);
+app.Add(lab1, 2/3);
+app.Add(lab2, 1/3);
 end

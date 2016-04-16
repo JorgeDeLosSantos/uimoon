@@ -12,14 +12,14 @@ app.SetLayout('vertical',2);
 for i=1:7
     sld(i) = Slider(0,10,randi(10));
     sld(i).SetCallback(@Cllbck_fcn);
-    app.Add(sld(i));
+    app.Add(sld(i), 1/7);
 end
 
     function Cllbck_fcn(~,~)
         import uimoon.utils.* % For Finder
         all_sliders = Finder.FindByClass('uimoon.core.Slider');
         all_values = arrayfun(@(x) x.GetValue(),all_sliders{1},'un',0);
-        suma = sum(cell2mat(all_values));
-        fprintf('Sum = %g \n\n',suma);
+        this_sum = sum(cell2mat(all_values));
+        fprintf('Sum = %g \n\n',this_sum);
     end
 end

@@ -14,11 +14,15 @@ app.SetLayout('horizontal'); % 3 rows, 3 columns
 p1 = Panel();
 p2 = Panel();
 p1.SetLayout('g',2,2,2);
-p2.SetLayout('v');
+p2.SetLayout('v',2);
 
-app.AddMany(p1,p2);
+app.Add(p1,1/3);
+app.Add(p2,2/3);
 
 p1.AddMany(Button('1'),Button('2'),Button('3'),Button('4'));
-p2.AddMany(Label('Label 01'),Label('Label 02'),Label('Label 03'),Label('Label 04'));
-
+p2.Add(Label('01'), 1/2);
+p2.Add(Label('02'), 1/8);
+p2.Add(Label('03'), 1/8);
+p2.Add(Label('04'), 1/8);
+p2.Add(Label('05'), 1/8);
 end

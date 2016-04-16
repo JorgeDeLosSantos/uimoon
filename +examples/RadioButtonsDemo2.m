@@ -7,11 +7,13 @@ function RadioButtonsDemo2
 import uimoon.core.*
 
 app = Frame('Radio Button Demo 2');
+app.SetSize(500,250);
 rb = RadioButtonMenu('Sine | Cosine | Tangent');
 rb.SetSelectionChange(@change_fcn);
 ax = Axes();
 ax.Plot2D(NaN,NaN);
-app.Add(rb);
+app.Add(rb,1/4);
+app.Add(ax,3/4);
 
     function change_fcn(~,~)
         curr_str = rb.GetCurrentText();

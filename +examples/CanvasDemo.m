@@ -12,12 +12,15 @@ app.SetLayout('horizontal',5);
 % Canvas
 cv1 = Canvas();
 cv2 = Canvas();
-app.AddMany(cv1,cv2);
+app.Add(cv1, 0.5);
+app.Add(cv2, 0.5);
 
 % Draw ...
 for i=1:10
     cv1.DrawLine(0,0,180,i*20,'r');
     cv2.DrawCircle(200,100,i*10,'g');
 end
+
+cv2.SetColor('#dadafe'); % Color for canvas cv2
 
 end

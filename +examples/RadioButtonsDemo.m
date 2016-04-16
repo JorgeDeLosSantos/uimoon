@@ -9,7 +9,7 @@ import uimoon.core.*
 app = Frame('Radio Button Demo');
 rb = RadioButtonMenu('Sine | Cosine | Tangent');
 rb.SetSelectionChange(@change_fcn);
-app.Add(rb);
+app.Add(rb, 1/2);
 
     function change_fcn(~,~)
         curr_str = rb.GetCurrentText();
