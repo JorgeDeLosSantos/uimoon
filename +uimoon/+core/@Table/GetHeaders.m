@@ -4,5 +4,5 @@ function H = GetHeaders(obj)
 % 
 %
 %
-H = get(obj.hTable,'ColumnName');
+H = get(obj.hUI,'ColumnName');
 end

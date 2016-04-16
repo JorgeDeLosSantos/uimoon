@@ -3,9 +3,6 @@ function ToHTML(obj,filename)
 % 
 % 
 % 
-% 
-% 
-% 
 
 hwb = waitbar(0,'Validando...');
 OutDir = 'axes2html';

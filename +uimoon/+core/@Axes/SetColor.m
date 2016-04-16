@@ -3,7 +3,7 @@ function SetColor(obj,color)
 %
 
 try
-    set(obj.hAxes,'Color',color);
+    set(obj.hUI,'Color',color);
 catch err
     error('Invalid color');
 end

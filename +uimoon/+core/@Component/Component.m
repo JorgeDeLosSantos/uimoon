@@ -3,7 +3,7 @@ classdef Component < hgsetget
     
     
     properties
-        hComp;
+        hUI;
         str_;
         size_;
         color_;
@@ -15,12 +15,10 @@ classdef Component < hgsetget
     
     properties (Constant)
         DEFAULT_PROPERTIES = {'Visible',   'off',...
-                              'Tag',       'guiood'};
+                              'Tag',       'uimoon'};
     end
     
     methods
-        function obj = Component
-        end
     end
     
 end

@@ -29,15 +29,15 @@ classdef Frame < uimoon.core.Container
                 size=[300 200]; % Default size
             end
             scsz = get(0,'ScreenSize');
-            obj.hCont = figure('MenuBar','None',...
+            obj.hUI = figure('MenuBar','None',...
                 'NumberTitle','off',...
                 'Name',name,...
                 'Position',[scsz(3)/3 scsz(4)/3 size(1) size(2)],...
                 'Resize','on');
-            %             centerfig(obj.hCont);
+            %             centerfig(obj.hUI);
             obj.size_=size;
             obj.name_=name;
-            obj.color_= uimoon.utils.Color(0.96,0.96,0.96);
+            obj.color_= uimoon.utils.Color(0.98,0.98,0.98);
             obj.width_=size(1);
             obj.height_=size(2);
             obj.SetColor(obj.color_);
@@ -48,7 +48,7 @@ classdef Frame < uimoon.core.Container
                 warning(['El archivo ',iconfile,' no existe, verifique.']);
             else
                 warning('off','MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame');
-                jframe=get(obj.hCont,'javaframe');
+                jframe=get(obj.hUI,'javaframe');
                 jIcon=javax.swing.ImageIcon(iconfile);
                 jframe.setFigureIcon(jIcon);
             end
@@ -57,24 +57,24 @@ classdef Frame < uimoon.core.Container
         function Center(obj,state)
             if nargin < 2; state = true; end; % app.Center() <- True default
             if state
-                centerfig(obj.hCont);
+                centerfig(obj.hUI);
             end
         end
         
         function Resize(obj,state)
             if state
-                set(obj.hCont,'Resize','on');
+                set(obj.hUI,'Resize','on');
             else
-                set(obj.hCont,'Resize','off');
+                set(obj.hUI,'Resize','off');
             end
         end
         
         function SetTitle(obj, title)
-            set(obj.hCont,'Name',title);
+            set(obj.hUI,'Name',title);
         end
         
         function SetMenuBar(obj, menubar)
-            set(menubar.hComp,'Parent',obj.hCont);
+            set(menubar.hUI,'Parent',obj.hUI);
         end
     end
 end

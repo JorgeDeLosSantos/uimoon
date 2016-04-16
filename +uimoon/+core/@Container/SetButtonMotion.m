@@ -1,5 +1,5 @@
 function SetButtonMotion(obj,fun)
 
-set(obj.hCont,'WindowButtonMotionFcn',fun);
+set(obj.hUI,'WindowButtonMotionFcn',fun);
 end
 

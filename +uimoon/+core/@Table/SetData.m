@@ -9,6 +9,6 @@ if isa(data,'double')
 	data = num2cell(data);
 end
 
-warndlg('Método en revisión ....');
-set(obj.hTable,'Data',data);
+warning('In development, take care...');
+set(obj.hUI,'Data',data);
 end

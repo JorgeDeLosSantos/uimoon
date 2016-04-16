@@ -19,7 +19,6 @@ classdef MessageBox < uimoon.core.Dialog
 	% 
     
     properties
-        hMsg;
         msg_;
         title_;
         style_;
@@ -41,13 +40,13 @@ classdef MessageBox < uimoon.core.Dialog
             obj.style_ = style;
             switch style
                 case 'normal'
-                    obj.hMsg = msgbox(msg,title);
+                    obj.hUI = msgbox(msg,title);
                 case 'error'
-                    obj.hMsg = errordlg(msg,title);
+                    obj.hUI = errordlg(msg,title);
                 case 'warn'
-                    obj.hMsg = warndlg(msg,title);
+                    obj.hUI = warndlg(msg,title);
                 case 'info'
-                    obj.hMsg = helpdlg(msg,title);
+                    obj.hUI = helpdlg(msg,title);
                 case 'custom'
                     if ~isempty(icon)
                         try
@@ -56,7 +55,7 @@ classdef MessageBox < uimoon.core.Dialog
                             icon_data = zeros(32,32,3);
                         end
                     end
-                    obj.hMsg = msgbox(msg,title,'custom',icon_data);
+                    obj.hUI = msgbox(msg,title,'custom',icon_data);
                 otherwise
                     % pass
             end
@@ -73,7 +72,7 @@ classdef MessageBox < uimoon.core.Dialog
 	        %
 	        % 		  size :   Font size, i.e.  10, 12, 18, 11, ...
 	        %
-            msg_childs = get(obj.hMsg,'Children');
+            msg_childs = get(obj.hUI,'Children');
             if strcmp(get(msg_childs(1),'type'),'axes')
                 hTxt = get(msg_childs(1),'Children');
             else
@@ -84,7 +83,7 @@ classdef MessageBox < uimoon.core.Dialog
         end
         
         function SetButtonText(obj,str)
-            msg_childs = get(obj.hMsg,'Children');
+            msg_childs = get(obj.hUI,'Children');
             if strcmp(get(msg_childs(2),'type'),'uicontrol')
                 hBt = msg_childs(2);
             else
@@ -94,7 +93,7 @@ classdef MessageBox < uimoon.core.Dialog
         end
         
         function disp(obj)
-            disp(obj.hMsg);
+            disp(obj.hUI);
         end
     end
     

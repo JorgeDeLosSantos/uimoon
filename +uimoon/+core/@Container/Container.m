@@ -1,7 +1,7 @@
 classdef Container < hgsetget
     
     properties
-        hCont;
+        hUI;
         name_;
         size_;
         color_;

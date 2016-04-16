@@ -9,9 +9,9 @@ if nargin < 2
 end
 
 try
-    str = get(obj.hComp, 'String');
+    str = get(obj.hUI, 'String');
 catch %#ok
-    warning('Propiedad no disponible para este componente');
+    warning('Unavailable property for this component');
     str = ''; % empty string
 end
 

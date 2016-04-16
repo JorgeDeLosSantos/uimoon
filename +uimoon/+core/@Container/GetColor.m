@@ -1,6 +1,6 @@
 function clr = GetColor(obj)
-% Container/Close
-% Close this container
+% Container/Color
+%
 %
 clr = obj.color_;
 end

@@ -3,5 +3,5 @@ function X = GetData(obj)
 % 
 % 
 
-X = get(obj.hTable,'Data');
+X = get(obj.hUI, 'Data');
 end

@@ -9,7 +9,7 @@ classdef Slider < uimoon.core.Component
     
     methods
         function obj = Slider(min,max,value)
-            obj.hComp = uicontrol('Style','Slider',...
+            obj.hUI = uicontrol('Style','Slider',...
                 'Min',min,'Max',max,'Value',value);
             obj.value_ = value;
             obj.min_ = min;
@@ -17,11 +17,11 @@ classdef Slider < uimoon.core.Component
         end
         
         function val = GetValue(obj)
-            val = get(obj.hComp,'Value');
+            val = get(obj.hUI,'Value');
         end
         
         function SetValue(obj,value)
-            set(obj.hComp,'Value',value);
+            set(obj.hUI,'Value',value);
         end
     end 
 end

@@ -21,8 +21,8 @@ function SetColor(obj,color)
 %
 %
 if ~isequal(size(color,2),3) || size(color,1) > 2
-	error('Inserte una matriz de 1x3 o 2x3');
+	error('Input argument must be a 1x3 or 2x3 matrix');
 end
 
-set(obj.hTable,'BackgroundColor',color);
+set(obj.hUI, 'BackgroundColor', color);
 end

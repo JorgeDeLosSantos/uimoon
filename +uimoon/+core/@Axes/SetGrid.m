@@ -4,16 +4,15 @@ function SetGrid(obj,state)
 %   
 %  state     -->    true | false
 %  
-%  Donde:
+%  Where:
 %
-%         true    -->    true  | 'on'  |  1
-%         false   -->    false | 'off' |  0
+%        true    -->    true  | 'on'  |  1
+%        false   -->    false | 'off' |  0
 
 if isequal(state,true) || isequal(state,'on') || isequal(state,1)
     state = 'on';
 else
-    state = 'off'; % Cualquier otro caso  -  Otherwise
+    state = 'off'; % Otherwise
 end
-
-grid(obj.hAxes,state);
+grid(obj.hUI, state);
 end

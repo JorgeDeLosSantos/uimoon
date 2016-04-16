@@ -5,6 +5,6 @@ if status
 else
     status = 'off';
 end
-set(obj.hComp, 'Visible', status);
+set(obj.hUI, 'Visible', status);
 end
 

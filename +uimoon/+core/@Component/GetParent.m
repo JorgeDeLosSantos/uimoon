@@ -3,8 +3,6 @@ function parent = GetParent(obj)
 %
 % 
 % 
-
 parent = obj.parent_;
-
 end
 

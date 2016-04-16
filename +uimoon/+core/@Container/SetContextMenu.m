@@ -4,6 +4,6 @@ if ~isa(ctxmenu,'ContextMenu')
     error('Argumento incorrecto');
 end
 
-set(obj.hCont,'UIContextMenu',ctxmenu.hCtx);
+set(obj.hUI,'UIContextMenu',ctxmenu.hCtx);
 
 end

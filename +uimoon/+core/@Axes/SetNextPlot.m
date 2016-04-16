@@ -6,12 +6,10 @@ function SetNextPlot(obj,nxt)
 %       nxt   -->    'replace' | 'add' | 'replacechildren'
 %
 %
-% See also: settitle, setlabels
+% See also: SetTitle, SetLabels
 %
 if ~any(strcmpi(nxt,{'replace','add','replacechildren'}))
-    error('Opción incorrecta');
+    error('Invalid option');
 end
-
-set(obj.hAxes,'NextPlot',nxt);
-
+set(obj.hUI, 'NextPlot', nxt);
 end

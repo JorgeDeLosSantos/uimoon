@@ -35,9 +35,9 @@ elseif nargin == 4 % obj + rgb
 end
 
 try
-    set(obj.hCont,'Color',color_.RGB);
+    set(obj.hUI,'Color',color_.RGB);
 catch %#ok
-    set(obj.hCont,'Background',color_.RGB);
+    set(obj.hUI,'Background',color_.RGB);
 end
 
     function c = hex2rgb(cstr)

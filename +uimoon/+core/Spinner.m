@@ -4,17 +4,17 @@ classdef Spinner < uimoon.core.Component
     %
     
     properties
-        JhComp;
+        hJUI;
     end
     
     methods
         function obj = Spinner
-            [obj.JhComp,obj.hComp]=javacomponent({'javax.swing.JSpinner'},...
+            [obj.hJUI, obj.hUI]=javacomponent({'javax.swing.JSpinner'},...
                 [],gcf);
         end
         
         function val = GetValue(obj)
-            val = obj.JhComp.getValue();
+            val = obj.hJUI.getValue();
         end
     end
     

@@ -1,5 +1,9 @@
 function SetColorMap(obj,cmap)
+% Axes/SetColorMap
 %
-%
-set(obj.GetParent(),'Colormap',cmap);
+try
+    set(obj.GetParent(),'Colormap',cmap);
+catch err
+    disp(err);
+end
 end

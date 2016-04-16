@@ -7,9 +7,9 @@ if ~isa(headers,'cell')
 	try
 		headers = num2str(headers);
 	catch
-		error('Los encabezados deben ser un cell array de strings');
+		error('Headers must be a cell array of strings');
 	end
 end
 
-set(obj.hTable,'ColumnName',headers);
+set(obj.hUI,'ColumnName',headers);
 end

@@ -1,8 +1,8 @@
-classdef Dialog < handle
+classdef Dialog < hgsetget
     % Component
     
     properties
-        hDlg;
+        hUI;
     end
     
     properties (Constant)
@@ -11,9 +11,6 @@ classdef Dialog < handle
     end
     
     methods
-        function obj = Dialog()
-        end
-        
         function disp(obj)
             fprintf('%s\n',class(obj));
         end

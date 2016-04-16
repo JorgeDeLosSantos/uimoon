@@ -1,7 +1,7 @@
 function p = GetParent(obj)
+% Axes/GetParent
+%
+% Get the parent of the Axes container 
 
-% hComp  --->  Panel padre
-% p      --->  Figure type
-
-p = get(obj.hComp,'Parent');
+p = get(obj.hUICont, 'Parent');
 end

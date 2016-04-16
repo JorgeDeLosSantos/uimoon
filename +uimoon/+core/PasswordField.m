@@ -2,16 +2,16 @@ classdef PasswordField < uimoon.core.Component
     % PasswordField
     
     properties
-        hJComp; % handle java component
+        hJUI; % handle java component
     end
     
     methods
         function obj = PasswordField
-            [obj.hJComp,obj.hComp]=javacomponent({'javax.swing.JPasswordField'},[],gcf);
+            [obj.hJUI, obj.hUI]=javacomponent({'javax.swing.JPasswordField'},[],gcf);
         end
         
         function pass = GetPassword(obj)
-            pass = get(obj.hJComp, 'Text');
+            pass = get(obj.hJUI, 'Text');
         end
     end
     

@@ -1,4 +1,4 @@
-classdef ContextMenu < handle
+classdef ContextMenu < uimoon.core.Menu
     % ContextMenu
     % 
     % Contextual Menu
@@ -21,15 +21,14 @@ classdef ContextMenu < handle
     
     
     properties
-        hCtx; % Handles of contextual menu
     end
     
     methods
         function obj = ContextMenu(varargin)
-            obj.hCtx = uicontextmenu;
+            obj.hUI = uicontextmenu;
             if ~isempty(varargin)
                 for i = 1:length(varargin)
-                    set(varargin{i}.hMenu,'Parent',obj.hCtx);
+                    set(varargin{i}.hUI,'Parent',obj.hUI);
                 end
             end
         end

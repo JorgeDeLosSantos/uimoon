@@ -23,23 +23,21 @@ classdef Menu < uimoon.core.Component
     methods
         function obj = Menu(label,callback,varargin)
             if ~isempty(varargin)
-                obj.hComp = uimenu(gcf,'label',label,...
+                obj.hUI = uimenu(gcf,'label',label,...
                     'callback',callback,varargin{:});
             else
-                obj.hComp = uimenu(gcf,'label',label,...
+                obj.hUI = uimenu(gcf,'label',label,...
                     'callback',callback);
             end
         end
         
         function SetParent(obj,parent)
-            if isa(parent,'uimoon.core.Frame')
-                parent_ = parent.hCont;
-            elseif isa(parent,'uimoon.core.Menu')
-                parent_ = parent.hComp;
+            if isa(parent,'uimoon.core.Frame') || isa(parent,'uimoon.core.Menu')
+                parent_ = parent.hUI;
             else
                 error('Invalid parent object');
             end
-            set(obj.hComp,'Parent',parent_);
+            set(obj.hUI,'Parent',parent_);
         end
         
         function AddItem(obj,item)

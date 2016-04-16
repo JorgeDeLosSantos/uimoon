@@ -1,5 +1,6 @@
 function SetProportion(obj,prop)
 % Component/SetProportion
+%
 % Set component proportion
 %
 
@@ -9,5 +10,4 @@ catch err
     disp(err);
     % Nothing to do !!!
 end
-
 end

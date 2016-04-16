@@ -2,15 +2,15 @@ classdef Axes < uimoon.core.Component
     % AXES
     
     properties
-        hAxes;
+        hUICont;
     end
     
     methods
         function obj = Axes()
-            obj.hComp = uipanel('BackgroundColor','w',...
+            obj.hUI = uipanel('BackgroundColor','w',...
                 'Units','Pixels');
-            p_pos = get(obj.hComp,'Position');
-            obj.hAxes = axes('Parent',obj.hComp,...
+            p_pos = get(obj.hUI,'Position');
+            a = axes('Parent',obj.hUI,...
                 'NextPlot','Replace',...
                 'XLim',[0 p_pos(3)],...
                 'YLim',[0 p_pos(4)]);

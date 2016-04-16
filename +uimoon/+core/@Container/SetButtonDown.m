@@ -1,4 +1,4 @@
 function SetButtonDown(obj,fun)
 
-set(obj.hCont,'WindowButtonDownFcn',fun);
+set(obj.hUI,'WindowButtonDownFcn',fun);
 end

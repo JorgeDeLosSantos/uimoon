@@ -1,10 +1,9 @@
-classdef Table < handle
+classdef Table < uimoon.core.Component
     % Table
     % 
 	% 
     
     properties
-        hTable;
         data_;
         headers_;
     end
@@ -19,7 +18,7 @@ classdef Table < handle
 				% la clase Table.
                 data = num2cell(data); 
             end
-            obj.hTable = uitable('Data',data,...
+            obj.hUI = uitable('Data',data,...
                 'ColumnName',headers);
             obj.data_ = data;
             obj.headers_ = headers;

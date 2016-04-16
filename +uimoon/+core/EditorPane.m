@@ -2,15 +2,14 @@ classdef EditorPane < uimoon.core.Component
     
     
     properties
-        JhComp;
+        hJUI;
     end
     
     methods
         function obj = EditorPane(src)
             jep = javax.swing.JEditorPane('text/html',src);
-            [obj.JhComp,obj.hComp]=javacomponent(jep,[],gcf);
+            [obj.hJUI, obj.hUI] = javacomponent(jep, [], gcf);
         end
     end
-    
 end
 

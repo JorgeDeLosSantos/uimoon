@@ -50,7 +50,7 @@ function ToHTML(obj,filename,opts)
 % License: MIT License
 % -------------------------------
 
-hTab = obj.hTable; % Referencia a la uitable
+hTab = obj.hUI; % Referencia a la uitable
 if nargin < 2
     % Si no se especifica un archivo de salida, entonces por defecto
     % se aloja el resultado en la dirección html/untitled.html

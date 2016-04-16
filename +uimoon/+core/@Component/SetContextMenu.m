@@ -1,9 +1,9 @@
 function SetContextMenu(obj,ctxmenu)
 
-if ~isa(ctxmenu,'ContextMenu')
-    error('Argumento incorrecto');
+if ~isa(ctxmenu,'uimoon.core.ContextMenu')
+    error('Invalid Component');
 end
 
-set(obj.hComp,'UIContextMenu',ctxmenu.hCtx);
+set(obj.hUI,'UIContextMenu',ctxmenu.hCtx);
 
 end

@@ -2,8 +2,9 @@ function SetCallback(obj,fun)
 %
 %
 try
-    set(obj.hComp,'Callback',fun);
-catch %#ok
-    MessageBox('###########','GUIOOD Toolbox','normal');
+    set(obj.hUI,'Callback',fun);
+catch err
+    disp(err);
+   % MessageBox('###########','GUIOOD Toolbox','normal');
 end
 end

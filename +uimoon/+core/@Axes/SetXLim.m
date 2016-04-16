@@ -1,4 +1,4 @@
 function SetXLim(obj,min,max)
 
-set(obj.hAxes,'XLim',[min max]);
+set(obj.hUI,'XLim',[min max]);
 end

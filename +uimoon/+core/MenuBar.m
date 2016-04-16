@@ -7,7 +7,7 @@ classdef MenuBar < uimoon.core.Component
     
     methods
         function obj = MenuBar(varargin)
-            obj.hComp = uimenu('visible','off');
+            obj.hUI = uimenu('visible','off');
             obj.Add(varargin);
         end
         
@@ -15,7 +15,7 @@ classdef MenuBar < uimoon.core.Component
             for ii = 1:length(varargin)
                 hA = varargin{ii};
                 if isa(hA,'Menu')
-                    hA.SetParent(obj.hComp);
+                    hA.SetParent(obj.hUI);
                 end
             end
         end

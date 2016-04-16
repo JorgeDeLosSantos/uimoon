@@ -1,5 +1,9 @@
 classdef RadioButtonMenu < uimoon.core.Component
+    % RadioButtonMenu
+    %
+    %
     properties
+        
     end
     
     methods
@@ -16,10 +20,10 @@ classdef RadioButtonMenu < uimoon.core.Component
                 end
             end
             obj.str_ = str;
-            obj.hComp = uibuttongroup();
+            obj.hUI = uibuttongroup();
             NEL = length(str);
             for i=1:NEL
-                uicontrol('Parent',obj.hComp,...
+                uicontrol('Parent',obj.hUI,...
                     'Style','RadioButton',...
                     'String',str{i},...
                     'Units','Normalized',...
@@ -28,11 +32,11 @@ classdef RadioButtonMenu < uimoon.core.Component
         end
         
         function SetSelectionChange(obj,fun)
-            set(obj.hComp,'SelectionChangeFcn',fun);
+            set(obj.hUI,'SelectionChangeFcn',fun);
         end
         
         function c_txt = GetCurrentText(obj)
-            hObj = get(obj.hComp,'SelectedObject');
+            hObj = get(obj.hUI,'SelectedObject');
             c_txt = get(hObj,'String');
         end
     end

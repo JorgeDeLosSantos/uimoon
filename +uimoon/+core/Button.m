@@ -18,14 +18,14 @@ classdef Button < uimoon.core.Component
     
     methods
         function obj = Button(str)
-            obj.hComp = uicontrol('style','push',...
+            obj.hUI = uicontrol('style','push',...
                 'String',str,obj.DEFAULT_PROPERTIES{:});
             obj.str_ = str;
-            obj.parent_ = get(obj.hComp,'Parent');
+            obj.parent_ = get(obj.hUI,'Parent');
         end
         
         function SetCallback(obj,fun)
-            set(obj.hComp,'Callback',{fun,obj});
+            set(obj.hUI,'Callback',{fun,obj});
         end
         
         function disp(obj)

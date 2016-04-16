@@ -6,14 +6,14 @@ classdef ListBox < uimoon.core.Component
     
     methods
         function obj = ListBox(str)
-            obj.hComp = uicontrol('Style','listbox',...
+            obj.hUI = uicontrol('Style','listbox',...
                 'String',str);
             obj.str_ = str;
         end
         
         function r = GetCurrentText(obj)
-            all_str = get(obj.hComp,'String');
-            k = get(obj.hComp,'Value');
+            all_str = get(obj.hUI,'String');
+            k = get(obj.hUI,'Value');
             r = all_str{k};
         end
     end

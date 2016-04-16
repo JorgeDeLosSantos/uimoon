@@ -1,4 +1,4 @@
 function SetButtonUp(obj,fun)
 
-set(obj.hCont,'WindowButtonUpFcn',fun);
+set(obj.hUI,'WindowButtonUpFcn',fun);
 end

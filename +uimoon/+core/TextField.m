@@ -9,12 +9,11 @@ classdef TextField < uimoon.core.Component
             if nargin < 1
                 str = '';
             end
-            obj.hComp = uicontrol('Style','edit',...
+            obj.hUI = uicontrol('Style','edit',...
                 'String',str,'BackG','w',...
                 obj.DEFAULT_PROPERTIES{:});
             obj.str_ = str;
         end
     end
-    
 end
 
