@@ -4,7 +4,7 @@ function SetProportion(obj,prop)
 %
 
 try
-    setappdata(obj.hComp,'Proportion',prop);
+    obj.proportion_ = prop;
 catch err
     disp(err);
     % Nothing to do !!!

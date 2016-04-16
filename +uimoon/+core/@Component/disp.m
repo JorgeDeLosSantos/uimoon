@@ -1,8 +1,3 @@
 function disp(obj)
-try
-    disp(obj.hComp);
-catch %#ok<CTCH>
-    disp('');
+disp(class(obj));
 end
-end
-

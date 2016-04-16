@@ -8,7 +8,6 @@ function SetColor(obj,varargin)
 %
 %
 %
-disp(varargin);
 if nargin == 2 && isa(varargin{1},'uimoon.utils.Color')
     % Color class
     color_ = varargin{1};

@@ -1,4 +1,4 @@
-classdef Component < handle
+classdef Component < hgsetget
     % Component
     
     
