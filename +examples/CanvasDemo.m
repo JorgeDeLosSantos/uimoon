@@ -19,6 +19,7 @@ app.Add(cv2, 0.5);
 for i=1:10
     cv1.DrawLine(0,0,180,i*20,'r');
     cv2.DrawCircle(200,100,i*10,'g');
+    cv2.DrawRect(10,10,i*10,i*10);
 end
 
 cv2.SetColor('#dadafe'); % Color for canvas cv2

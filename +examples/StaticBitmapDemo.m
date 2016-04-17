@@ -6,12 +6,12 @@ function StaticBitmapDemo
 %
 import uimoon.core.*
 
-app = Frame('Static Bitmap Demo', [400,200]);
-X1 = uint8(rand(250)*255);
-bmp1 = StaticBitmap(1-X1);
-bmp2 = StaticBitmap(X1*0.5);
-bmp3 = StaticBitmap(X1*1.5);
-app.Add(bmp1, 1/3);
-app.Add(bmp2, 1/3);
-app.Add(bmp3, 1/3);
+logo = '+uimoon/+images/uimoon_logo.png';
+X = imread(logo);
+
+app = Frame('Static Bitmap Demo', [400,150]);
+bmp1 = StaticBitmap(X);
+bmp2 = StaticBitmap(X*0.5);
+app.Add(bmp1, 1/2);
+app.Add(bmp2, 1/2);
 end

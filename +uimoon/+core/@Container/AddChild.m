@@ -12,16 +12,10 @@ isaxes = isa(child,'uimoon.core.Axes');
 isbitmap = isa(child,'uimoon.core.StaticBitmap');
 iscanvas = isa(child,'uimoon.core.Canvas');
 try
-    if ~isaxes && ~isbitmap && ~iscanvas
-        set(child.hUI,    ...
-            'Parent',    obj.hUI,...
-            'Visible',   'on' );
-    else
-        set(child.hUICont,    ...
-            'Parent',    obj.hUI,...
-            'Visible',   'on' );
-    end
+    set(child.hUI,    ...
+        'Parent',    obj.hUI,...
+        'Visible',   'on' );
 catch err
-    disp(err);
+    disp(err.message);
 end
 end
