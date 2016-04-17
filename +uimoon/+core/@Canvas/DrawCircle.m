@@ -11,4 +11,5 @@ YData = r*sin(TData) + cy;
 hLine = line(XData,YData);
 axis('square');
 set(hLine,'Parent',obj.hEUI,'Color',color);
+set(obj.hUI,'Units','Normalized');
 end

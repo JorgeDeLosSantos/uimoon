@@ -8,4 +8,5 @@ XData = linspace(x,x+width);
 YData = linspace(y,y+height);
 hLine = line(XData,YData);
 set(hLine,'Parent',obj.hEUI,'Color',color);
+set(obj.hUI,'Units','Normalized');
 end
