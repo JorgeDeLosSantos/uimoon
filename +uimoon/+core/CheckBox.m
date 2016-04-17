@@ -15,6 +15,10 @@ classdef CheckBox < uimoon.core.Component
                 obj.DEFAULT_PROPERTIES{:});
             obj.str_ = string;
         end
+        
+        function v = GetValue(obj)
+            v = get(obj.hUI,'Value');
+        end
     end
     
 end
