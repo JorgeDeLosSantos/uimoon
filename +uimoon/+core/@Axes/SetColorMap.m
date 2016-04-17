@@ -4,6 +4,6 @@ function SetColorMap(obj,cmap)
 try
     set(obj.GetParent(),'Colormap',cmap);
 catch err
-    disp(err);
+    disp(err.message);
 end
 end

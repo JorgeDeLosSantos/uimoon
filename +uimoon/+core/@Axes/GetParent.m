@@ -3,5 +3,5 @@ function p = GetParent(obj)
 %
 % Get the parent of the Axes container 
 
-p = get(obj.hUICont, 'Parent');
+p = get(obj.hUI, 'Parent');
 end
