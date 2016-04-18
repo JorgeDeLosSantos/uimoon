@@ -10,21 +10,34 @@ classdef TestingClasses < tests.TestCase
     % Button
     methods
         function testButton(obj)
-            bt = uimoon.core.Button('');
+            bt = uimoon.core.Button('Button');
             obj.assertIsInstanceOf(bt,'uimoon.core.Button');
             bt.Destroy();
         end
         
         function testLabel(obj)
-            bt = uimoon.core.Button('');
-            obj.assertIsInstanceOf(bt,'uimoon.core.Button');
-            bt.Destroy();
+            lbl = uimoon.core.Label('Label');
+            obj.assertIsInstanceOf(lbl,'uimoon.core.Label');
+            lbl.Destroy();
         end
         
         function testAxes(obj)
-            bt = uimoon.core.Button('');
-            obj.assertIsInstanceOf(bt,'uimoon.core.Button');
-            bt.Destroy();
+            ax = uimoon.core.Axes();
+            obj.assertIsInstanceOf(ax,'uimoon.core.Axes');
+            ax.Destroy();
+        end
+        
+        function testCanvas(obj)
+            cv = uimoon.core.Canvas();
+            obj.assertIsInstanceOf(cv,'uimoon.core.Canvas');
+            cv.Destroy();
+        end
+        
+        function testStaticBitmap(obj)
+            img = NaN(100);
+            stbmp = uimoon.core.StaticBitmap(img);
+            obj.assertIsInstanceOf(stbmp,'uimoon.core.StticBitmap');
+            stbmp.Destroy();
         end
         
     end

@@ -6,6 +6,7 @@ classdef TestCase < handle
         ntest;
         nfailed_test;
         npassed_test;
+        tests = struct();
     end
     
     methods
@@ -17,10 +18,12 @@ classdef TestCase < handle
         
         function addPassedTest(obj)
             obj.npassed_test = obj.npassed_test + 1;
+            obj.print('Passed test');
         end
         
         function addFailedTest(obj)
             obj.nfailed_test = obj.nfailed_test + 1;
+            obj.print(2,'Failed Test');
         end
         
         function addTest(obj)
@@ -67,8 +70,8 @@ classdef TestCase < handle
             all_methods = methods(obj);
             for ii = 1:length(all_methods)
                 if regexp(all_methods{ii},'test\w*')
-                    eval(sprintf('obj.%s',all_methods{ii}));
-                    fprintf('Runnig %s test\n',all_methods{ii});
+                    fprintf('Running %s test\n',all_methods{ii});
+                    eval(sprintf('obj.%s',all_methods{ii}))
                 end
             end
             obj.printReport();
@@ -88,6 +91,17 @@ classdef TestCase < handle
             else
                 fprintf('%g tests failed\n',failed);
             end
+        end
+        
+        function print(obj,varargin)
+            if nargin>2
+                flg = varargin{1};
+                str = varargin{2};
+            else
+                flg = 1;
+                str = varargin{1};
+            end
+            fprintf(flg,'%s\n',str);
         end
     end
     
