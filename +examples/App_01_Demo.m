@@ -17,17 +17,11 @@ bxh2 = BoxLayout('h',2);
 bxh3 = BoxLayout('h',2);
 bxh4 = BoxLayout('h',2);
 
-% Panels
-p1 = Panel();
-p2 = Panel();
-p3 = Panel();
-p4 = Panel();
-
-bxv.Add(p1,0.2);
-bxv.Add(p2,0.2);
-bxv.Add(p3,0.2);
+bxv.Add(bxh1,0.2);
+bxv.Add(bxh2,0.2);
+bxv.Add(bxh3,0.2);
 bxv.AddSpace(0.1);
-bxv.Add(p4,0.2);
+bxv.Add(bxh4,0.2);
 
 lb1 = Label('Name');
 txt1 = TextField('');
@@ -52,10 +46,6 @@ bxh4.Add(cancel_bt,0.4);
 
 % Set Layouts
 app.SetLayout(bxv);
-p1.SetLayout(bxh1);
-p2.SetLayout(bxh2);
-p3.SetLayout(bxh3);
-p4.SetLayout(bxh4);
 
 % Callbacks
 ok_bt.SetCallback(@fun);
