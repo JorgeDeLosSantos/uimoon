@@ -25,47 +25,44 @@ import uimoon.core.*
 app = Frame('App',[300,130]);
 app.Center();
 
-app.SetLayout('v',0);
+% Layouts
+bxv = BoxLayout('v',1);
+bxh1 = BoxLayout('h',2);
+bxh2 = BoxLayout('h',2);
+bxh3 = BoxLayout('h',2);
+bxh4 = BoxLayout('h',2);
 
-p1 = Panel();
-p2 = Panel();
-p3 = Panel();
-p4 = Panel();
-
-% Layouts for panels
-p1.SetLayout('h',2);
-p2.SetLayout('h',2);
-p3.SetLayout('h',2);
-p4.SetLayout('h',2);
-
-app.Add(p1,0.2);
-app.Add(p2,0.2);
-app.Add(p3,0.2);
-app.AddSpace(0.1);
-app.Add(p4,0.2);
+bxv.Add(bxh1,0.2);
+bxv.Add(bxh2,0.2);
+bxv.Add(bxh3,0.2);
+bxv.AddSpace(0.1);
+bxv.Add(bxh4,0.2);
 
 lb1 = Label('Name');
 txt1 = TextField('');
-p1.Add(lb1,0.3);
-p1.Add(txt1,0.7);
+bxh1.Add(lb1,0.3);
+bxh1.Add(txt1,0.7);
 
 lb2 = Label('E-mail');
 txt2 = TextField('');
-p2.Add(lb2,0.3);
-p2.Add(txt2,0.7);
+bxh2.Add(lb2,0.3);
+bxh2.Add(txt2,0.7);
 
 lb3 = Label('Address');
 txt3 = TextField('');
-p3.Add(lb3,0.3);
-p3.Add(txt3,0.7);
+bxh3.Add(lb3,0.3);
+bxh3.Add(txt3,0.7);
 
 ok_bt = Button('OK');
 cancel_bt = Button('Cancel');
+bxh4.AddSpace(0.1);
+bxh4.Add(ok_bt,0.4);
+bxh4.Add(cancel_bt,0.4);
 
-p4.AddSpace(0.1);
-p4.Add(ok_bt,0.4);
-p4.Add(cancel_bt,0.4);
+% Set Layouts
+app.SetLayout(bxv);
 
+% Callbacks
 ok_bt.SetCallback(@fun);
 cancel_bt.SetCallback(@fun);
 
@@ -85,6 +82,67 @@ end
 ```
 
 ![](+examples/images/app01.PNG)
+
+
+**And other simple app**
+
+```matlab
+function App_02_Demo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
+import uimoon.core.*
+
+app = Frame('App',[400,300]);
+app.Center();
+
+% Layouts
+bx = BoxLayout('v',2);
+bxctrl = BoxLayout('h',1);
+
+% Axes
+ax = Axes();
+ax.Plot2D(NaN,NaN);
+bx.Add(ax,0.9);
+
+% Controls
+bx.Add(bxctrl,0.1);
+
+lbl = Label('f(x)');
+fun = TextField();
+chk = CheckBox('Grid',false);
+bt = Button('Plot');
+
+% Add controls to Panel
+bxctrl.Add(lbl,0.1);
+bxctrl.Add(fun,0.5);
+bxctrl.Add(chk,0.125);
+bxctrl.Add(bt,0.275);
+
+% Set layouts
+app.SetLayout(bx);
+
+% Set button callback
+bt.SetCallback(@plotting);
+chk.SetCallback(@setgrid);
+
+    function plotting(varargin)
+        fx = fun.GetText();
+        x = linspace(0,10,1000);
+        y = eval(fx);
+        ax.Plot2D(x,y);
+    end
+
+    function setgrid(~,~,obj)
+        ax.SetGrid(obj.GetValue());
+    end
+end
+```
+
+![](+examples/images/app02.PNG)
+
 
 ### How to install?
 
