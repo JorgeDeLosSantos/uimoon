@@ -36,7 +36,7 @@ classdef TestingClasses < tests.TestCase
         function testStaticBitmap(obj)
             img = NaN(100);
             stbmp = uimoon.core.StaticBitmap(img);
-            obj.assertIsInstanceOf(stbmp,'uimoon.core.StticBitmap');
+            obj.assertIsInstanceOf(stbmp,'uimoon.core.StaticBitmap');
             stbmp.Destroy();
         end
         

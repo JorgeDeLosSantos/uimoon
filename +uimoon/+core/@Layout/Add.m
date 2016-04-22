@@ -15,5 +15,5 @@ try
 catch err
     disp(err.message);
 end
-%obj.Draw();
+obj.Draw();
 end
