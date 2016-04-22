@@ -56,7 +56,7 @@ else
     border = 5;
 end
 
-%hcs = findobj('parent',obj.hCont); % array of handles
+%hcs = findobj('parent',obj.hUI); % array of handles
 hcs = obj.children_;
 ncs = length(hcs); % length of " " "
 
@@ -93,9 +93,9 @@ end
             POSY = 1 - sum(obj.childrenproportions_(1:i)); % Y-Position (Normalized)
             H_ = (prop*(CH)-(border*((ncs+1)/2)))/CH; % Height
             if isa(hcs{i},'uimoon.core.Container')
-                cmp_ref = hcs{i}.hCont;
+                cmp_ref = hcs{i}.hUI;
             else
-                cmp_ref = hcs{i}.hComp;
+                cmp_ref = hcs{i}.hUI;
             end
             set(cmp_ref,'units','normalized',...
                 'Position',[CX POSY+CY W_ H_]);
@@ -114,9 +114,9 @@ end
             POSX = sum(obj.childrenproportions_(1:i-1)); % X-Position (Normalized)
             W_ = (prop*(CW)-(border*((ncs+1)/2)))/CW; % Width
             if isa(hcs{i},'uimoon.core.Container')
-                cmp_ref = hcs{i}.hCont;
+                cmp_ref = hcs{i}.hUI;
             else
-                cmp_ref = hcs{i}.hComp;
+                cmp_ref = hcs{i}.hUI;
             end
             set(cmp_ref,'units','normalized',...
                 'Position',[POSX+CX CY W_ H_]);
@@ -137,7 +137,7 @@ end
         for i=rows_:-1:1
             for j=1:cols_
                 try
-                    set(hcs{k}.hComp,'units','normalized',...
+                    set(hcs{k}.hUI,'units','normalized',...
                         'Position',[(j-1)*(1/cols_)+KX (i-1)*(1/rows_)+KY ANCHO ALTO]);
                     k = k + 1;
                     % [(j-1)*(1/cols_) (i-1)*(1/rows_) 1/cols_ 1/rows_]

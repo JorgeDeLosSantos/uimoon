@@ -27,5 +27,4 @@ for i=1:length(varargin)
 %             'Visible',   'on' );
     end
 end
-obj.SetLayout(obj.GetLayout());
 end
