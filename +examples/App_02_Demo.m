@@ -8,17 +8,19 @@ import uimoon.core.*
 
 app = Frame('App',[400,300]);
 app.Center();
-app.SetLayout('v',2);
+
+% Layouts
+bx = BoxLayout('v',2);
+bxctrl = BoxLayout('h',1);
 
 % Axes
 ax = Axes();
 ax.Plot2D(NaN,NaN);
-app.Add(ax,0.9);
+bx.Add(ax,0.9);
 
 % Controls
 pctrl = Panel();
-pctrl.SetLayout('h',1);
-app.Add(pctrl,0.1);
+bx.Add(pctrl,0.1);
 
 lbl = Label('f(x)');
 fun = TextField();
@@ -26,10 +28,14 @@ chk = CheckBox('Grid',false);
 bt = Button('Plot');
 
 % Add controls to Panel
-pctrl.Add(lbl,0.1);
-pctrl.Add(fun,0.5);
-pctrl.Add(chk,0.125);
-pctrl.Add(bt,0.275);
+bxctrl.Add(lbl,0.1);
+bxctrl.Add(fun,0.5);
+bxctrl.Add(chk,0.125);
+bxctrl.Add(bt,0.275);
+
+% Set layouts
+app.SetLayout(bx);
+pctrl.SetLayout(bxctrl);
 
 % Set button callback
 bt.SetCallback(@plotting);

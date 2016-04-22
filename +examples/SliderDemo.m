@@ -7,15 +7,16 @@ function SliderDemo
 import uimoon.core.*
 
 app = Frame('Slider Demo');
-app.SetLayout('vertical',2);
+bx = BoxLayout('v',1);
 
 for i=1:7
     sld(i) = Slider(0,10,randi(10));
     sld(i).SetCallback(@Cllbck_fcn);
-    app.Add(sld(i), 1/7);
+    bx.Add(sld(i), 1/7);
 end
+app.SetLayout(bx);
 
-    function Cllbck_fcn(~,~)
+    function Cllbck_fcn(varargin)
         import uimoon.utils.* % For Finder
         all_sliders = Finder.FindByClass('uimoon.core.Slider');
         all_values = arrayfun(@(x) x.GetValue(),all_sliders{1},'un',0);

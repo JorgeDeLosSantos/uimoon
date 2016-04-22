@@ -8,7 +8,9 @@ import uimoon.core.*
 
 app = Frame('Table Export Demo');
 tab = Table(rand(3),{'a','b','c'}); % Create table with random data
-app.Add(tab);
+bx = BoxLayout('h',2);
+bx.Add(tab,1);
+app.SetLayout(bx);
 
 opts.PageTitle = 'Example 01'; % Title of HTML page
 opts.TableTitle = '<font color="#0000FF">Some data</font>'; 

@@ -9,7 +9,7 @@ import uimoon.utils.*
 app = Frame('Layout Demo');
 app.SetSize(400,300);
 % 
-bx = BoxLayout('v',1);
+bx = BoxLayout('v',2);
 bx.Add(Button('A'),0.2);
 p2 = Panel();
 bx.Add(p2, 0.5);

@@ -10,47 +10,54 @@ import uimoon.core.*
 app = Frame('App',[300,130]);
 app.Center();
 
-app.SetLayout('v',0);
+% Layouts
+bxv = BoxLayout('v',1);
+bxh1 = BoxLayout('h',2);
+bxh2 = BoxLayout('h',2);
+bxh3 = BoxLayout('h',2);
+bxh4 = BoxLayout('h',2);
 
+% Panels
 p1 = Panel();
 p2 = Panel();
 p3 = Panel();
 p4 = Panel();
 
-% Layouts for panels
-p1.SetLayout('h',2);
-p2.SetLayout('h',2);
-p3.SetLayout('h',2);
-p4.SetLayout('h',2);
-
-app.Add(p1,0.2);
-app.Add(p2,0.2);
-app.Add(p3,0.2);
-app.AddSpace(0.1);
-app.Add(p4,0.2);
+bxv.Add(p1,0.2);
+bxv.Add(p2,0.2);
+bxv.Add(p3,0.2);
+bxv.AddSpace(0.1);
+bxv.Add(p4,0.2);
 
 lb1 = Label('Name');
 txt1 = TextField('');
-p1.Add(lb1,0.3);
-p1.Add(txt1,0.7);
+bxh1.Add(lb1,0.3);
+bxh1.Add(txt1,0.7);
 
 lb2 = Label('E-mail');
 txt2 = TextField('');
-p2.Add(lb2,0.3);
-p2.Add(txt2,0.7);
+bxh2.Add(lb2,0.3);
+bxh2.Add(txt2,0.7);
 
 lb3 = Label('Address');
 txt3 = TextField('');
-p3.Add(lb3,0.3);
-p3.Add(txt3,0.7);
+bxh3.Add(lb3,0.3);
+bxh3.Add(txt3,0.7);
 
 ok_bt = Button('OK');
 cancel_bt = Button('Cancel');
+bxh4.AddSpace(0.1);
+bxh4.Add(ok_bt,0.4);
+bxh4.Add(cancel_bt,0.4);
 
-p4.AddSpace(0.1);
-p4.Add(ok_bt,0.4);
-p4.Add(cancel_bt,0.4);
+% Set Layouts
+app.SetLayout(bxv);
+p1.SetLayout(bxh1);
+p2.SetLayout(bxh2);
+p3.SetLayout(bxh3);
+p4.SetLayout(bxh4);
 
+% Callbacks
 ok_bt.SetCallback(@fun);
 cancel_bt.SetCallback(@fun);
 

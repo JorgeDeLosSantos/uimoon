@@ -8,12 +8,14 @@ import uimoon.core.*
 
 app = Frame('Radio Button Demo 2');
 app.SetSize(500,250);
+bx = BoxLayout('h',2);
 rb = RadioButtonMenu('Sine | Cosine | Tangent');
 rb.SetSelectionChange(@change_fcn);
 ax = Axes();
 ax.Plot2D(NaN,NaN);
-app.Add(rb,1/4);
-app.Add(ax,3/4);
+bx.Add(rb,1/4);
+bx.Add(ax,3/4);
+app.SetLayout(bx);
 
     function change_fcn(~,~)
         curr_str = rb.GetCurrentText();

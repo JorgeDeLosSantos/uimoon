@@ -8,16 +8,20 @@ import uimoon.core.*
 import uimoon.utils.*
 
 app = Frame('Mini-Calc',[250 150]);
-app.SetLayout('v',5); % Set main layout
 app.Center()
+% Layouts
+bx = BoxLayout('v',5); % Main Layout
+bxp1 = BoxLayout('h',5);
+bxp2 = BoxLayout('h',5);
+bxp3 = BoxLayout('h',5);
 
 p1 = Panel(); 
 p2 = Panel();
 p3 = Panel();
 
-app.Add(p1,1/3);
-app.Add(p2,1/3);
-app.Add(p3,1/3);
+bx.Add(p1,1/3);
+bx.Add(p2,1/3);
+bx.Add(p3,1/3);
 
 % Labels and TextFields
 lb1 = Label('# 1');
@@ -25,13 +29,13 @@ lb2 = Label('# 2');
 num1 = TextField();
 num2 = TextField();
 
-p1.Add(lb1, 1/3); % Add controls to Panel p1
-p1.Add(num1, 2/3);
-p2.Add(lb2, 1/3); % Add controls to Panel p2
-p2.Add(num2, 2/3);
+bxp1.Add(lb1, 1/3); % Add controls to Panel p1
+bxp1.Add(num1, 2/3);
+bxp2.Add(lb2, 1/3); % Add controls to Panel p2
+bxp2.Add(num2, 2/3);
 
-p1.SetLayout('horizontal',5);
-p2.SetLayout('horizontal',5);
+p1.SetLayout(bxp1);
+p2.SetLayout(bxp2);
 
 % Buttons
 bt1 = Button('+');
@@ -39,16 +43,14 @@ bt2 = Button('-');
 bt3 = Button('*');
 bt4 = Button('/');
 
-% Changing fonts for buttons
+% Changing fonts and add buttons
 for bt=[bt1,bt2,bt3,bt4]
     bt.SetFont(Font('Arial',16,'bold'));
+    bxp3.Add(bt, 1/4);
 end
 
-p3.Add(bt1, 1/4); % Add buttons to panel p3
-p3.Add(bt2, 1/4);
-p3.Add(bt3, 1/4);
-p3.Add(bt4, 1/4);
-p3.SetLayout('horizontal',2); % Set layout for p3, horizontal and two controls
+p3.SetLayout(bxp3); % Set layout for p3, horizontal and two controls
+app.SetLayout(bx);
 
 bt1.SetCallback(@calcular_fcn); % Set callback for buttons 
 bt2.SetCallback(@calcular_fcn);

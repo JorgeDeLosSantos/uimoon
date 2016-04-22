@@ -9,20 +9,25 @@ import uimoon.utils.*
 
 app = Frame('Layout Demo');
 app.SetSize(400,300);
-app.SetLayout('horizontal'); % 3 rows, 3 columns
+bx = BoxLayout('h',2);
 
 p1 = Panel();
 p2 = Panel();
-p1.SetLayout('g',2,2,2);
-p2.SetLayout('v',2);
+lyp1 = GridLayout(2,2,2);
+lyp2 = BoxLayout('v',2);
 
-app.Add(p1,1/3);
-app.Add(p2,2/3);
+bx.Add(p1,1/3);
+bx.Add(p2,2/3);
 
-p1.AddMany(Button('1'),Button('2'),Button('3'),Button('4'));
-p2.Add(Label('01'), 1/2);
-p2.Add(Label('02'), 1/8);
-p2.Add(Label('03'), 1/8);
-p2.Add(Label('04'), 1/8);
-p2.Add(Label('05'), 1/8);
+lyp1.AddMany(Button('1'),Button('2'),Button('3'),Button('4'));
+lyp2.Add(Label('01'), 1/2);
+lyp2.Add(Label('02'), 1/8);
+lyp2.Add(Label('03'), 1/8);
+lyp2.Add(Label('04'), 1/8);
+lyp2.Add(Label('05'), 1/8);
+
+% Set Layouts
+p1.SetLayout(lyp1);
+p2.SetLayout(lyp2);
+app.SetLayout(bx);
 end

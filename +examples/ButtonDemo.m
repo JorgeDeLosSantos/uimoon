@@ -9,8 +9,10 @@ import uimoon.core.*
 app = Frame('Button Demo');
 bt = Button('Botón');
 bt.SetCallback(@bt_callback);
-app.AddSpace(0.2); % for "centered" button
-app.Add(bt,0.6);
+bx = BoxLayout('v',1);
+bx.AddSpace(0.2); % for "centered" button
+bx.Add(bt,0.6);
+app.SetLayout(bx);
 
     function bt_callback(varargin)
         bt.SetColor('#77FFFF'); % Also Hex color

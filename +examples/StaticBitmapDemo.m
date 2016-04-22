@@ -12,6 +12,8 @@ X = imread(logo);
 app = Frame('Static Bitmap Demo', [400,150]);
 bmp1 = StaticBitmap(X);
 bmp2 = StaticBitmap(X*0.5);
-app.Add(bmp1, 1/2);
-app.Add(bmp2, 1/2);
+bx = BoxLayout('h',2);
+bx.Add(bmp1, 1/2);
+bx.Add(bmp2, 1/2);
+app.SetLayout(bx);
 end

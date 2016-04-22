@@ -8,7 +8,6 @@ import uimoon.core.*
 import uimoon.utils.*
 
 app = Frame('UIMOON Controls',[300 400]);
-app.SetLayout('h',2);
 headers = {'UIMOON control','MATLAB Control'};
 data = {
     'AboutDialog','';
@@ -39,7 +38,9 @@ tab = Table(data,headers);
 tab.SetColor([0.6,0.8,0.9;
               0.8,0.9,0.8]);
 tab.SetFont(Font('Arial',9,'bold'));
-app.Add(tab,1);
+bx = BoxLayout('h',2);
+bx.Add(tab,1);
+app.SetLayout(bx);
 
 opts.PageTitle = 'Ctrls';
 opts.TableTitle = 'UIMOON Controls';
