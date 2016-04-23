@@ -18,7 +18,7 @@ classdef MessageBox < uimoon.core.Dialog
 	% 
 	% 
     
-    properties
+    properties (Access = protected)
         msg_;
         title_;
         style_;

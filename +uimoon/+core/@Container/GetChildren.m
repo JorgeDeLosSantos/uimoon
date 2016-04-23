@@ -1,7 +1,6 @@
 function ch = GetChildren(obj)
-% Container/GetChildrens
+% Container/GetChildren
 %
-%
-% Return all childrens
+% Return all children
 ch = obj.children_;
 end

@@ -1,42 +1,34 @@
 classdef Frame < uimoon.core.Container
-    % Frame
+    % Frame Create a frame based on MATLAB figure.
     %
-    % Create a frame based on figure MATLAB Object.
-    %
-    % Syntax:
     % 
-    % 			Frame(name,size)
-    %  
-    % 			   - name:      Name or title of window
-    %              - size:      Vector of width and height dimensions.
-    % 
-    %
+    % Parameters:
+    %           title  -  Name or title of window
+    %           size   -  Vector of width and height dimensions
+    %   
     % Example:
-    % 
-    %			>> app = Frame('App',[300,200]);
-    %
-    %
+    %           >> app = Frame('App',[300,200]);
     %
     %
     
     properties
-        %
+        % Inherited from Container
     end
     
     methods
-        function obj = Frame(name,size)
+        function obj = Frame(title,size)
             if nargin==1
                 size=[300 200]; % Default size
             end
             scsz = get(0,'ScreenSize');
             obj.hUI = figure('MenuBar','None',...
                 'NumberTitle','off',...
-                'Name',name,...
+                'Name',title,...
                 'Position',[scsz(3)/3 scsz(4)/3 size(1) size(2)],...
                 'Resize','on');
             %             centerfig(obj.hUI);
             obj.size_=size;
-            obj.name_=name;
+            obj.title_= title;
             obj.color_= uimoon.utils.Color(0.98,0.98,0.98);
             obj.width_=size(1);
             obj.height_=size(2);
@@ -70,6 +62,9 @@ classdef Frame < uimoon.core.Container
         end
         
         function SetTitle(obj, title)
+            % Set title for frame class
+            % 
+            % 
             set(obj.hUI,'Name',title);
         end
         

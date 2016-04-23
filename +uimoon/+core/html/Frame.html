@@ -1,0 +1,227 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Frame</title><meta name="generator" content="MATLAB 8.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-22"><meta name="DC.source" content="Frame.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">classdef</span> Frame &lt; uimoon.core.Container
+    <span class="comment">% Frame Create a frame based on MATLAB figure.</span>
+    <span class="comment">%</span>
+    <span class="comment">% *BOLD TEXT*</span>
+    <span class="comment">%</span>
+    <span class="comment">% Parameters:</span>
+    <span class="comment">%           title  -  Name or title of window</span>
+    <span class="comment">%           size   -  Vector of width and height dimensions</span>
+    <span class="comment">%</span>
+    <span class="comment">% Example:</span>
+    <span class="comment">%           &gt;&gt; app = Frame('App',[300,200]);</span>
+    <span class="comment">%</span>
+    <span class="comment">%</span>
+
+    <span class="keyword">properties</span>
+        <span class="comment">% Inherited from Container</span>
+    <span class="keyword">end</span>
+
+    <span class="keyword">methods</span>
+        <span class="keyword">function</span> obj = Frame(title,size)
+            <span class="keyword">if</span> nargin==1
+                size=[300 200]; <span class="comment">% Default size</span>
+            <span class="keyword">end</span>
+            scsz = get(0,<span class="string">'ScreenSize'</span>);
+            obj.hUI = figure(<span class="string">'MenuBar'</span>,<span class="string">'None'</span>,<span class="keyword">...</span>
+                <span class="string">'NumberTitle'</span>,<span class="string">'off'</span>,<span class="keyword">...</span>
+                <span class="string">'Name'</span>,title,<span class="keyword">...</span>
+                <span class="string">'Position'</span>,[scsz(3)/3 scsz(4)/3 size(1) size(2)],<span class="keyword">...</span>
+                <span class="string">'Resize'</span>,<span class="string">'on'</span>);
+            <span class="comment">%             centerfig(obj.hUI);</span>
+            obj.size_=size;
+            obj.title_= title;
+            obj.color_= uimoon.utils.Color(0.98,0.98,0.98);
+            obj.width_=size(1);
+            obj.height_=size(2);
+            obj.SetColor(obj.color_);
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> SetIcon(obj,iconfile)
+            <span class="keyword">if</span> ~exist(iconfile,<span class="string">'file'</span>)
+                warning([<span class="string">'El archivo '</span>,iconfile,<span class="string">' no existe, verifique.'</span>]);
+            <span class="keyword">else</span>
+                warning(<span class="string">'off'</span>,<span class="string">'MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame'</span>);
+                jframe=get(obj.hUI,<span class="string">'javaframe'</span>);
+                jIcon=javax.swing.ImageIcon(iconfile);
+                jframe.setFigureIcon(jIcon);
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> Center(obj,state)
+            <span class="keyword">if</span> nargin &lt; 2; state = true; <span class="keyword">end</span>; <span class="comment">% app.Center() &lt;- True default</span>
+            <span class="keyword">if</span> state
+                centerfig(obj.hUI);
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> Resize(obj,state)
+            <span class="keyword">if</span> state
+                set(obj.hUI,<span class="string">'Resize'</span>,<span class="string">'on'</span>);
+            <span class="keyword">else</span>
+                set(obj.hUI,<span class="string">'Resize'</span>,<span class="string">'off'</span>);
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> SetTitle(obj, title)
+            <span class="comment">% Set title for frame class</span>
+            <span class="comment">%</span>
+            <span class="comment">%</span>
+            set(obj.hUI,<span class="string">'Name'</span>,title);
+        <span class="keyword">end</span>
+
+        <span class="keyword">function</span> SetMenuBar(obj, menubar)
+            set(menubar.hUI,<span class="string">'Parent'</span>,obj.hUI);
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Error using uimoon.core.Frame (line 25)
+Not enough input arguments.
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2012b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+classdef Frame < uimoon.core.Container
+    % Frame Create a frame based on MATLAB figure.
+    %
+    % *BOLD TEXT*
+    % 
+    % Parameters:
+    %           title  -  Name or title of window
+    %           size   -  Vector of width and height dimensions
+    %   
+    % Example:
+    %           >> app = Frame('App',[300,200]);
+    %
+    %
+    
+    properties
+        % Inherited from Container
+    end
+    
+    methods
+        function obj = Frame(title,size)
+            if nargin==1
+                size=[300 200]; % Default size
+            end
+            scsz = get(0,'ScreenSize');
+            obj.hUI = figure('MenuBar','None',...
+                'NumberTitle','off',...
+                'Name',title,...
+                'Position',[scsz(3)/3 scsz(4)/3 size(1) size(2)],...
+                'Resize','on');
+            %             centerfig(obj.hUI);
+            obj.size_=size;
+            obj.title_= title;
+            obj.color_= uimoon.utils.Color(0.98,0.98,0.98);
+            obj.width_=size(1);
+            obj.height_=size(2);
+            obj.SetColor(obj.color_);
+        end
+        
+        function SetIcon(obj,iconfile)
+            if ~exist(iconfile,'file')
+                warning(['El archivo ',iconfile,' no existe, verifique.']);
+            else
+                warning('off','MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame');
+                jframe=get(obj.hUI,'javaframe');
+                jIcon=javax.swing.ImageIcon(iconfile);
+                jframe.setFigureIcon(jIcon);
+            end
+        end
+        
+        function Center(obj,state)
+            if nargin < 2; state = true; end; % app.Center() <- True default
+            if state
+                centerfig(obj.hUI);
+            end
+        end
+        
+        function Resize(obj,state)
+            if state
+                set(obj.hUI,'Resize','on');
+            else
+                set(obj.hUI,'Resize','off');
+            end
+        end
+        
+        function SetTitle(obj, title)
+            % Set title for frame class
+            % 
+            % 
+            set(obj.hUI,'Name',title);
+        end
+        
+        function SetMenuBar(obj, menubar)
+            set(menubar.hUI,'Parent',obj.hUI);
+        end
+    end
+end
+
+
+##### SOURCE END #####
+--></body></html>

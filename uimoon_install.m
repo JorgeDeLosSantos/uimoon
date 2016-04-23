@@ -11,5 +11,12 @@ fprintf(starting_msg);
 % Add current dir to pah
 addpath(UIMOON_DIR,'-end');
 
+% Open the documentation
+try
+    web('docs/html/index.html','-browser');
+catch %#ok
+    warning('Help files not found');
+end
+
 fprintf(added_msg);
 disp(end_msg);

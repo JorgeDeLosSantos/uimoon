@@ -9,15 +9,12 @@ import uimoon.utils.*
 app = Frame('Layout Demo');
 app.SetSize(400,300);
 % 
-bx = BoxLayout('v',2);
-bx.Add(Button('A'),0.2);
-p2 = Panel();
-bx.Add(p2, 0.5);
-app.SetLayout(bx);
+% 
+bx = BoxLayout('v', 5);
+bx1 = GridLayout(2,2,1);
 
-hl = GridLayout(2,2,1);
-hl.Add(Button('SAS 1'));
-hl.Add(Button('SAS 2'));
-hl.Add(Button('SAS 3'));
-hl.AddSpace(0.1);
-p2.SetLayout(hl);
+bx.Add(Button('A'), 0.2);
+app.SetLayout(bx);
+app.SetLayout(bx1);
+
+disp(app.GetChildren())

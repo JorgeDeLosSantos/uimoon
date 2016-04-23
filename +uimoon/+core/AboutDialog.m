@@ -1,6 +1,18 @@
 classdef AboutDialog < uimoon.core.Dialog
-% An AboutDialog class
+% AboutDialog
 % 
+% Create an about dialog.
+%
+% AboutDialog Parameters:
+% 
+%     name          -  Project Name
+%     version       -  Version
+%     description   -  Description
+%     authors       -  Author(s) of project
+%     email         -  E-mail
+%     web           -  Project URL
+%      
+%
 % UIMOON 0.1.0
 % Author: Pedro Jorge De Los Santos <delossantosmfq@gmail.com>
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
@@ -66,10 +78,7 @@ classdef AboutDialog < uimoon.core.Dialog
                 'Units','Normalized',...
                 'Position',[0 0.15 1 0.1],...
                 'ForegroundColor',ones(1,3)*0.4);
-            
-%             [~,hweb]=javacomponent({'javax.swing.JLabel',obj.web_},[],obj.hUI);
-%             set(hweb,'Units','Normalized',...
-%                 'Position',[0 0.5 1 0.1])
+                
             uicontrol('style','text',...
                 'String',obj.web_,...
                 'Units','Normalized',...
