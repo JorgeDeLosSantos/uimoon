@@ -1,0 +1,322 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Demos for UIMOON 0.1.0</title><meta name="generator" content="MATLAB 8.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-23"><meta name="DC.source" content="demos.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#555; line-height:140%; background:#f0f0f0; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.6em; color:#055285; line-height:140%; font-weight:bold; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.4em; color:#0A70B5; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; line-height: 100%; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:circle; }
+
+.content { font-size:1.2em; line-height:120%; padding: 20px; margin-left: 100px; margin-right: 100px;}
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Demos for UIMOON 0.1.0</h1><!--introduction--><p><a href="index.html"><b>Index</b></a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">1. Mini Application Demo</a></li><li><a href="#2">2. Plotting App Demo</a></li></ul></div><h2>1. Mini Application Demo<a name="1"></a></h2><pre class="codeinput"><span class="keyword">function</span> App_01_Demo
+<span class="comment">% Demo for UIMOON 0.1.0</span>
+<span class="comment">% Author: Pedro Jorge De Los Santos</span>
+<span class="comment">% Project URL: https://github.com/JorgeDeLosSantos/uimoon</span>
+<span class="comment">% License: MIT License</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+import <span class="string">uimoon.core.*</span>
+
+app = Frame(<span class="string">'App'</span>,[300,130]);
+app.Center();
+
+<span class="comment">% Layouts</span>
+bxv = BoxLayout(<span class="string">'v'</span>,1);
+bxh1 = BoxLayout(<span class="string">'h'</span>,2);
+bxh2 = BoxLayout(<span class="string">'h'</span>,2);
+bxh3 = BoxLayout(<span class="string">'h'</span>,2);
+bxh4 = BoxLayout(<span class="string">'h'</span>,2);
+
+bxv.Add(bxh1,0.2);
+bxv.Add(bxh2,0.2);
+bxv.Add(bxh3,0.2);
+bxv.AddSpace(0.1);
+bxv.Add(bxh4,0.2);
+
+lb1 = Label(<span class="string">'Name'</span>);
+txt1 = TextField(<span class="string">''</span>);
+bxh1.Add(lb1,0.3);
+bxh1.Add(txt1,0.7);
+
+lb2 = Label(<span class="string">'E-mail'</span>);
+txt2 = TextField(<span class="string">''</span>);
+bxh2.Add(lb2,0.3);
+bxh2.Add(txt2,0.7);
+
+lb3 = Label(<span class="string">'Address'</span>);
+txt3 = TextField(<span class="string">''</span>);
+bxh3.Add(lb3,0.3);
+bxh3.Add(txt3,0.7);
+
+ok_bt = Button(<span class="string">'OK'</span>);
+cancel_bt = Button(<span class="string">'Cancel'</span>);
+bxh4.AddSpace(0.1);
+bxh4.Add(ok_bt,0.4);
+bxh4.Add(cancel_bt,0.4);
+
+<span class="comment">% Set Layouts</span>
+app.SetLayout(bxv);
+
+<span class="comment">% Callbacks</span>
+ok_bt.SetCallback(@fun);
+cancel_bt.SetCallback(@fun);
+
+    <span class="keyword">function</span> fun(varargin)
+        clicked_button = varargin{3};
+        <span class="keyword">if</span> strcmpi(clicked_button.GetText(),<span class="string">'OK'</span>)
+            name = txt1.GetText(); <span class="comment">%#ok</span>
+            email = txt2.GetText(); <span class="comment">%#ok</span>
+            address = txt3.GetText(); <span class="comment">%#ok</span>
+            save(<span class="string">'user_data.mat'</span>,<span class="string">'name'</span>,<span class="string">'email'</span>,<span class="string">'address'</span>);
+            uimoon.core.MessageBox(<span class="string">'Data saved to user_data.mat'</span>,<span class="string">'uimoon'</span>,<span class="string">'info'</span>)
+        <span class="keyword">else</span> <span class="comment">% Cancel case</span>
+            app.Close()
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="comment">%</span>
+</pre><img vspace="5" hspace="5" src="demos_01.png" alt=""> <h2>2. Plotting App Demo<a name="2"></a></h2><pre class="codeinput"><span class="keyword">function</span> App_02_Demo
+<span class="comment">% Demo for UIMOON 0.1.0</span>
+<span class="comment">% Author: Pedro Jorge De Los Santos</span>
+<span class="comment">% Project URL: https://github.com/JorgeDeLosSantos/uimoon</span>
+<span class="comment">% License: MIT License</span>
+<span class="comment">%</span>
+import <span class="string">uimoon.core.*</span>
+
+app = Frame(<span class="string">'App'</span>,[400,300]);
+app.Center();
+
+<span class="comment">% Layouts</span>
+bx = BoxLayout(<span class="string">'v'</span>,2);
+bxctrl = BoxLayout(<span class="string">'h'</span>,1);
+
+<span class="comment">% Axes</span>
+ax = Axes();
+ax.Plot2D(NaN,NaN);
+bx.Add(ax,0.9);
+
+<span class="comment">% Controls</span>
+bx.Add(bxctrl,0.1);
+
+lbl = Label(<span class="string">'f(x)'</span>);
+fun = TextField();
+chk = CheckBox(<span class="string">'Grid'</span>,false);
+bt = Button(<span class="string">'Plot'</span>);
+
+<span class="comment">% Add controls to Panel</span>
+bxctrl.Add(lbl,0.1);
+bxctrl.Add(fun,0.5);
+bxctrl.Add(chk,0.125);
+bxctrl.Add(bt,0.275);
+
+<span class="comment">% Set layouts</span>
+app.SetLayout(bx);
+
+<span class="comment">% Set button callback</span>
+bt.SetCallback(@plotting);
+chk.SetCallback(@setgrid);
+
+    <span class="keyword">function</span> plotting(varargin)
+        fx = fun.GetText();
+        x = linspace(0,10,1000);
+        y = eval(fx);
+        ax.Plot2D(x,y);
+    <span class="keyword">end</span>
+
+    <span class="keyword">function</span> setgrid(~,~,obj)
+        ax.SetGrid(obj.GetValue());
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><p class="footer"><a href="http://github.com/JorgeDeLosSantos/uimoon">UIMOON Toolbox</a><br><br><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2012b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Demos for UIMOON 0.1.0
+%
+% <index.html *Index*>
+%
+%% 1. Mini Application Demo
+%
+function App_01_Demo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
+%
+import uimoon.core.*
+
+app = Frame('App',[300,130]);
+app.Center();
+
+% Layouts
+bxv = BoxLayout('v',1);
+bxh1 = BoxLayout('h',2);
+bxh2 = BoxLayout('h',2);
+bxh3 = BoxLayout('h',2);
+bxh4 = BoxLayout('h',2);
+
+bxv.Add(bxh1,0.2);
+bxv.Add(bxh2,0.2);
+bxv.Add(bxh3,0.2);
+bxv.AddSpace(0.1);
+bxv.Add(bxh4,0.2);
+
+lb1 = Label('Name');
+txt1 = TextField('');
+bxh1.Add(lb1,0.3);
+bxh1.Add(txt1,0.7);
+
+lb2 = Label('E-mail');
+txt2 = TextField('');
+bxh2.Add(lb2,0.3);
+bxh2.Add(txt2,0.7);
+
+lb3 = Label('Address');
+txt3 = TextField('');
+bxh3.Add(lb3,0.3);
+bxh3.Add(txt3,0.7);
+
+ok_bt = Button('OK');
+cancel_bt = Button('Cancel');
+bxh4.AddSpace(0.1);
+bxh4.Add(ok_bt,0.4);
+bxh4.Add(cancel_bt,0.4);
+
+% Set Layouts
+app.SetLayout(bxv);
+
+% Callbacks
+ok_bt.SetCallback(@fun);
+cancel_bt.SetCallback(@fun);
+
+    function fun(varargin)
+        clicked_button = varargin{3};
+        if strcmpi(clicked_button.GetText(),'OK')
+            name = txt1.GetText(); %#ok
+            email = txt2.GetText(); %#ok
+            address = txt3.GetText(); %#ok
+            save('user_data.mat','name','email','address');
+            uimoon.core.MessageBox('Data saved to user_data.mat','uimoon','info')
+        else % Cancel case
+            app.Close()
+        end
+    end
+end
+
+%
+%% 2. Plotting App Demo
+%
+%
+function App_02_Demo
+% Demo for UIMOON 0.1.0
+% Author: Pedro Jorge De Los Santos
+% Project URL: https://github.com/JorgeDeLosSantos/uimoon
+% License: MIT License
+%
+import uimoon.core.*
+
+app = Frame('App',[400,300]);
+app.Center();
+
+% Layouts
+bx = BoxLayout('v',2);
+bxctrl = BoxLayout('h',1);
+
+% Axes
+ax = Axes();
+ax.Plot2D(NaN,NaN);
+bx.Add(ax,0.9);
+
+% Controls
+bx.Add(bxctrl,0.1);
+
+lbl = Label('f(x)');
+fun = TextField();
+chk = CheckBox('Grid',false);
+bt = Button('Plot');
+
+% Add controls to Panel
+bxctrl.Add(lbl,0.1);
+bxctrl.Add(fun,0.5);
+bxctrl.Add(chk,0.125);
+bxctrl.Add(bt,0.275);
+
+% Set layouts
+app.SetLayout(bx);
+
+% Set button callback
+bt.SetCallback(@plotting);
+chk.SetCallback(@setgrid);
+
+    function plotting(varargin)
+        fx = fun.GetText();
+        x = linspace(0,10,1000);
+        y = eval(fx);
+        ax.Plot2D(x,y);
+    end
+
+    function setgrid(~,~,obj)
+        ax.SetGrid(obj.GetValue());
+    end
+end
+
+
+##### SOURCE END #####
+--></body></html>
