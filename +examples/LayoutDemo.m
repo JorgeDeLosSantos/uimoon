@@ -17,7 +17,7 @@ lyp2 = BoxLayout('v',2);
 bx.Add(lyp1, 1/3);
 bx.Add(lyp2, 2/3);
 
-lyp1.Add(Button('1'));
+lyp1.AddMany(Button('1'),Button('2'),Button('3'),Button('4'));
 lyp2.Add(Label('01'), 1/2);
 lyp2.Add(Label('02'), 1/8);
 lyp2.Add(Label('03'), 1/8);

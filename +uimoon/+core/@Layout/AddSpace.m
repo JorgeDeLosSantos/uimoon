@@ -1,9 +1,12 @@
-function AddSpace(obj,space)
+function AddSpace(obj,space,tag)
 % Add
 %
 %
-if nargin<2
+if nargin == 1
     space = 0.1;
+    tag = '';
+elseif nargin == 2
+    tag = '';
 end
 
 uisp = uimoon.core.Panel();
@@ -13,7 +16,8 @@ obj.childrenproportions_ = [obj.childrenproportions_, space];
 try
     set(uisp.hUI,    ...
         'Parent',    obj.hUI,...
-        'Visible',   'on' );
+        'Visible',   'on',...
+        'Tag', tag);
 catch err
     disp(err.message);
 end
