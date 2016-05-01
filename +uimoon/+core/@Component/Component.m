@@ -15,10 +15,18 @@ classdef Component < hgsetget
     
     properties (Constant)
         DEFAULT_PROPERTIES = {'Visible',   'off',...
-                              'Tag',       'uimoon'};
+            'Tag', 'uimoon'};
     end
     
     methods
+        function r = IsTemporal(obj)
+            tag_of = get(obj.hUI, 'Tag');
+            if strcmpi(tag_of,'temporal')
+                r = true;
+            else
+                r = false;
+            end
+        end
     end
     
 end
