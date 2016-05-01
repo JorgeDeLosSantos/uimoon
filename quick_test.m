@@ -15,6 +15,3 @@ bx1 = GridLayout(2,2,1);
 
 bx.Add(Button('A'), 0.2);
 app.SetLayout(bx);
-app.SetLayout(bx1);
-
-disp(app.GetChildren())

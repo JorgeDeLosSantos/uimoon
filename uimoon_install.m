@@ -7,7 +7,6 @@ added_msg = sprintf('UIMOON dir (%s) was added to MATLAB search path...\n\n',UIM
 end_msg = 'Please visit <a href="https://github.com/JorgeDeLosSantos/uimoon">UIMOON Page</a> for more information.';
 
 fprintf(starting_msg);
-
 % Add current dir to pah
 addpath(UIMOON_DIR,'-end');
 
@@ -20,3 +19,7 @@ end
 
 fprintf(added_msg);
 disp(end_msg);
+
+%% Warning > Development version
+
+warning('This is a pre-alpha development version, take care. Please report bugs to the URL repository.')

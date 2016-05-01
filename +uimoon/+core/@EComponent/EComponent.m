@@ -1,10 +1,11 @@
 classdef EComponent < uimoon.core.Component
-    % GComponent class
-    % Embded component
+    % EComponent class
+    % 
+    % Embedded component
     
     
     properties
-        hEUI; % Base/Embded component, typically an Axes.
+        hEUI; % Base/Embedded component, typically an Axes.
     end
     
     methods

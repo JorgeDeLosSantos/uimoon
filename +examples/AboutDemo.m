@@ -22,7 +22,7 @@ app.SetMenuBar(menu_bar);
         description_ = 'MATLAB Graphical User Interfaces with Object Oriented Design, inspired in Java and wxPython syntax.';
         author_ = 'Pedro Jorge De Los Santos';
         email_ = 'delossantosmfq@gmail.com';
-        web_ = 'larysa-tech.blogspot.mx';
+        web_ = 'jdlsantos.blogspot.mx';
         AboutDialog(name_,version_,description_,author_,email_,web_)
     end
 end

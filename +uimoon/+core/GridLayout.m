@@ -26,7 +26,7 @@ classdef GridLayout < uimoon.core.Layout
                     obj.AddSpace();
                 end
             end
-            
+%             
             rows = obj.rows_;
             cols = obj.cols_;
             border = obj.border_;
@@ -45,6 +45,7 @@ classdef GridLayout < uimoon.core.Layout
             for i=rows:-1:1
                 for j=1:cols
                     try
+                        disp(k);
                         set(hcs{k}.hUI,'units','normalized',...
                             'Position',[(j-1)*(1/cols)+KX (i-1)*(1/rows)+KY ANCHO ALTO]);
                         k = k + 1;
