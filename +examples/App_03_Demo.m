@@ -1,52 +1,67 @@
-function App_02_Demo
+function App_03_Demo
 % Demo for UIMOON 0.1.0
 % Author: Pedro Jorge De Los Santos
 % Project URL: https://github.com/JorgeDeLosSantos/uimoon
 % License: MIT License
 %
+% A simple calculator
+%
 import uimoon.core.*
 
-app = Frame('App',[400,300]);
+app = Frame('App',[200,300]);
 app.Center();
 
 % Layouts
-bx = BoxLayout('v',2);
-bxctrl = BoxLayout('h',1);
+bx = BoxLayout('v', 1);
+gr = GridLayout(4,4,1);
 
-% Axes
-ax = Axes();
-ax.Plot2D(NaN,NaN);
-bx.Add(ax,0.9);
+labels = {'7','8','9','/',...
+    '4','5','6','*',...
+    '1','2','3','-',...
+    '0','.','+','='};
 
-% Controls
-bx.Add(bxctrl,0.1);
+% Buttons
+for ii = 1:length(labels)
+    cb = Button(labels{ii});
+    cb.SetCallback(@calc);
+    gr.Add(cb, 1);
+end
 
-lbl = Label('f(x)');
-fun = TextField();
-chk = CheckBox('Grid',false);
-bt = Button('Plot');
+% Screen
+screen = TextField();
+bx.Add(screen, 0.15);
 
-% Add controls to Panel
-bxctrl.Add(lbl,0.1);
-bxctrl.Add(fun,0.5);
-bxctrl.Add(chk,0.125);
-bxctrl.Add(bt,0.275);
-
-% Set layouts
+bx.Add(gr, 0.85);
 app.SetLayout(bx);
 
-% Set button callback
-bt.SetCallback(@plotting);
-chk.SetCallback(@setgrid);
-
-    function plotting(varargin)
-        fx = fun.GetText();
-        x = linspace(0,10,1000);
-        y = eval(fx);
-        ax.Plot2D(x,y);
+    function calc(src,~,~)
+        global cnum ceval
+        
+        pres= get(src,'str');
+        if ~any(strcmp(pres,{'*','/','+','-','='}))
+            cnum=[cnum,pres];
+            screen.SetText(cnum);
+        elseif any(strcmp(pres,{'+','-','*','/'}))
+            ceval=[ceval,cnum,pres];
+            cnum='';
+        elseif strcmp(pres,'=')
+            ceval=[ceval,cnum];
+            screen.SetText(str2num(ceval));
+            ceval=screen.GetText();
+            cnum='';
+        end
     end
 
-    function setgrid(~,~,obj)
-        ax.SetGrid(obj.GetValue());
+    function ac(~,~)
+        global cnum ceval
+        cnum='';
+        ceval='';
+        set(pantalla,'str','0');
     end
+
+    function off(~,~)
+        clearvars('-global','cnum','ceval');
+        set(pantalla,'str','');
+    end
+
 end
