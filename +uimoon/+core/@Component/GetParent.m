@@ -1,8 +1,9 @@
 function parent = GetParent(obj)
-% GetParent 
+% Component/GetParent
 %
-% 
-% 
-parent = obj.parent_;
+% Return the parent of this object
+%  
+parent = obj.Parent;
+
 end
 

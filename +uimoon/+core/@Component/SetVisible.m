@@ -1,5 +1,8 @@
 function SetVisible(obj,status)
-% % validateattributes(status,{'numeric'},{'positive'});
+%
+%
+%
+
 if status
     status = 'on';
 else

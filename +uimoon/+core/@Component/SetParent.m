@@ -1,4 +1,8 @@
 function SetParent(obj,varargin)
+% Component/SetParent
+%
+% Set the object parent
+% 
 if nargin < 2
     set(obj.hUI,'Parent',obj.DEFAULT_PARENT);
     obj.parent_ = obj.DEFAULT_PARENT;
