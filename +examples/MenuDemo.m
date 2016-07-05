@@ -12,7 +12,7 @@ m_archivo.AddItem(Menu('Open',''));
 m_archivo.AddItem(Menu('Exit',@close_this));
 
 m_herr = Menu('Tools','');
-sub1 = Menu('Opción 1','');
+sub1 = Menu('Option 1','');
 sub11 = Menu('Option 1.1','');
 sub12 = Menu('Option 1.2','');
 sub2 = Menu('Option 2','');

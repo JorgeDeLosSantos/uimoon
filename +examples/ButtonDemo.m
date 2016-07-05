@@ -7,7 +7,7 @@ function ButtonDemo
 import uimoon.core.*
 
 app = Frame('Button Demo');
-bt = Button('Botón');
+bt = Button('Button');
 bt.SetCallback(@bt_callback);
 bx = BoxLayout('v',1);
 bx.AddSpace(0.2); % for "centered" button
