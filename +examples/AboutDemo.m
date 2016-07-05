@@ -7,9 +7,10 @@ function AboutDemo
 import uimoon.core.*
 
 app = Frame('AboutDialog Demo');
+app.Center();
 
 m_ayuda = Menu('Help','');
-m_ayuda.AddItem(Menu('Help',''));
+m_ayuda.AddItem(Menu('Help','disp(''UIMOON Toolbox'')'));
 m_ayuda.AddItem(Menu('About...',@about));
 
 menu_bar = MenuBar(m_ayuda);

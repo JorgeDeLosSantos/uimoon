@@ -14,4 +14,6 @@ bx = BoxLayout('v', 5);
 bx1 = GridLayout(2,2,1);
 
 bx.Add(Button('A'), 0.2);
+bx.Add(Button('B'), 0.4);
+bx.Add(Button('B'), 0.4);
 app.SetLayout(bx);

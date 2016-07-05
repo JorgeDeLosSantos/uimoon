@@ -1,5 +1,5 @@
 clear;clc;
-% "Installing" (added to path) uimoon toolbox
+% "Installing" (adding to MATLAB search path) uimoon toolbox
 UIMOON_DIR = strrep(cd,filesep,['\',filesep]);
 
 starting_msg = sprintf('Installing UIMOON Toolbox ...\n');
