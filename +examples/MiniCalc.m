@@ -10,10 +10,10 @@ import uimoon.utils.*
 app = Frame('Mini-Calc',[250 150]);
 app.Center()
 % Layouts
-bx = BoxLayout('v',5); % Main Layout
-bxp1 = BoxLayout('h',5);
-bxp2 = BoxLayout('h',5);
-bxp3 = BoxLayout('h',5);
+bx = BoxLayout('v',2); % Main Layout
+bxp1 = BoxLayout('h',2);
+bxp2 = BoxLayout('h',2);
+bxp3 = BoxLayout('h',2);
 
 p1 = Panel(); 
 p2 = Panel();

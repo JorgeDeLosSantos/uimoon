@@ -34,5 +34,5 @@ end
 %         c = [RED GREEN BLUE]/255;
         c = uimoon.utils.Color(RED/255,GREEN/255,BLUE/255);
     end
-obj.color_ = color_;
+obj.Color = color_;
 end

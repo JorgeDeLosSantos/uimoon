@@ -20,8 +20,8 @@ classdef Button < uimoon.core.Component
         function obj = Button(str)
             obj.hUI = uicontrol('style','push',...
                 'String',str,obj.DEFAULT_PROPERTIES{:});
-            obj.str_ = str;
-            obj.parent_ = get(obj.hUI,'Parent');
+            obj.String = str;
+            obj.Parent = get(obj.hUI,'Parent');
         end
         
         function SetCallback(obj,fun)
@@ -29,7 +29,7 @@ classdef Button < uimoon.core.Component
         end
         
         function disp(obj)
-            fprintf('%s\n%s\n',class(obj),obj.str_);
+            fprintf('%s\n%s\n',class(obj),obj.String);
         end
     end
     

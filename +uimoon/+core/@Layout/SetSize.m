@@ -1,5 +1,5 @@
 function SetSize(obj,width,height)
-% Container.SetSize 
+% Layout/SetSize 
 %
 % Establece el tamaño de un objeto de la clase Container o de
 % una sub-clase de la anterior.
@@ -17,8 +17,7 @@ function SetSize(obj,width,height)
 validateattributes(width,{'numeric'},{'positive'});
 validateattributes(height,{'numeric'},{'positive'});
 
-
-old_pos = get(obj.hCont,'Position');
-set(obj.hCont,'Position',[old_pos(1) old_pos(2) width height]);
+old_pos = get(obj.hUI,'Position');
+set(obj.hUI,'Position',[old_pos(1) old_pos(2) width height]);
 
 end

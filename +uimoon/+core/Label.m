@@ -10,7 +10,7 @@ classdef Label < uimoon.core.Component
             obj.hUI = uicontrol('style','text',...
                 'String',str,...
                 obj.DEFAULT_PROPERTIES{:}); % Default properties
-            obj.str_ = str;
+            obj.String = str;
         end
     end
     

@@ -2,16 +2,16 @@ classdef Font
     % Font class
     
     properties
-        name_;
-        size_;
-        weight_;
+        Name;
+        Size;
+        Weight;
     end
     
     methods
         function obj = Font(name,size,weight)
-            obj.name_ = name;
-            obj.size_ = size;
-            obj.weight_ = weight;
+            obj.Name = name;
+            obj.Size = size;
+            obj.Weight = weight;
         end
     end
 end

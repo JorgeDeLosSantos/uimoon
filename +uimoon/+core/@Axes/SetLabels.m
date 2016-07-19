@@ -7,9 +7,9 @@ if nargin < 4
     zlabel = '';
 end
 
-hXLabel = get(obj.hEUI, 'XLabel'); % Get XLabel handle
-hYLabel = get(obj.hEUI, 'YLabel'); % Get YLabel handle
-hZLabel = get(obj.hEUI, 'ZLabel'); % Get ZLabel handle
+hXLabel = get(obj.hUI, 'XLabel'); % Get XLabel handle
+hYLabel = get(obj.hUI, 'YLabel'); % Get YLabel handle
+hZLabel = get(obj.hUI, 'ZLabel'); % Get ZLabel handle
 
 set(hXLabel,'String',xlabel);
 set(hYLabel,'String',ylabel);

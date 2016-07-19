@@ -5,7 +5,7 @@ function SetProportion(obj,prop)
 %
 
 try
-    obj.proportion_ = prop;
+    obj.Proportion = prop;
 catch err
     disp(err);
     % Nothing to do !!!

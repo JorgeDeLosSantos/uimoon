@@ -14,5 +14,5 @@ if isequal(state,true) || isequal(state,'on') || isequal(state,1)
 else
     state = 'off'; % Otherwise
 end
-grid(obj.hEUI, state);
+grid(obj.hUI, state);
 end

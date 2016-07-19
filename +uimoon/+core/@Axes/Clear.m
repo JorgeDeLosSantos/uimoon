@@ -3,5 +3,5 @@ function Clear(obj)
 %
 % Clear the axes
 
-cla(obj.hEUI); % ...
+cla(obj.hUI); % ...
 end

@@ -1,4 +1,4 @@
 function SetYLim(obj,min,max)
 
-set(obj.hEUI,'YLim',[min max]);
+set(obj.hUI,'YLim',[min max]);
 end

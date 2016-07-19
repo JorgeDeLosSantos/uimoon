@@ -20,12 +20,12 @@ classdef App_Class < uimoon.core.Frame
         
         function initComponents(obj)
             import uimoon.core.*;
-            obj.bx = BoxLayout('v',10);
+            obj.bx = BoxLayout('v',2);
             obj.pw = PasswordField();
             obj.bt = Button('Go!!!');
             obj.bt.SetCallback(@obj.verificar);
-            obj.bx.Add(obj.pw,0.5);
-            obj.bx.Add(obj.bt,0.5);
+            obj.bx.Add(obj.pw,0.45);
+            obj.bx.Add(obj.bt,0.45);
             obj.SetLayout(obj.bx);
         end
         

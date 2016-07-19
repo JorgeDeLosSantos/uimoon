@@ -1,13 +1,13 @@
 function Add(obj,uic,proportion)
-% Add
+% Layout/Add
 %
 %
 if nargin<3
     proportion = 0.1;
 end
-uic.SetProportion(proportion);
-obj.children_ = [obj.children_, {uic}];
-obj.childrenproportions_ = [obj.childrenproportions_, proportion];
+
+
+% Setting parent
 try
     set(uic.hUI,    ...
         'Parent',    obj.hUI,...
@@ -15,5 +15,7 @@ try
 catch err
     disp(err.message);
 end
+
+% Drawing
 obj.Draw();
 end

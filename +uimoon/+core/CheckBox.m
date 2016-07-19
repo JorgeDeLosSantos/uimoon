@@ -4,7 +4,7 @@ classdef CheckBox < uimoon.core.Component
     %
     
     properties
-        value_;
+        Value;
     end
     
     methods
@@ -13,7 +13,8 @@ classdef CheckBox < uimoon.core.Component
                 'String',string,...
                 'Value',value,...
                 obj.DEFAULT_PROPERTIES{:});
-            obj.str_ = string;
+            obj.String = string;
+            obj.Value = value;
         end
         
         function v = GetValue(obj)

@@ -5,7 +5,8 @@ classdef EComponent < uimoon.core.Component
     
     
     properties
-        hEUI; % Base/Embedded component, typically an Axes.
+        hPUI; % Parent UI, typically an uipanel, then 
+              % hUI will be the Axes or "Canvas"
     end
     
     methods

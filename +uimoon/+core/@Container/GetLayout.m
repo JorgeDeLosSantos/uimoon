@@ -3,5 +3,5 @@ function h = GetLayout(obj)
 % 
 % 
 % 
-h = obj.layout_;
+h = obj.Layout;
 end

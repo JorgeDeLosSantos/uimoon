@@ -11,5 +11,5 @@ function SetNextPlot(obj,nxt)
 if ~any(strcmpi(nxt,{'replace','add','replacechildren'}))
     error('Invalid option');
 end
-set(obj.hEUI, 'NextPlot', nxt);
+set(obj.hUI, 'NextPlot', nxt);
 end

@@ -2,5 +2,5 @@ function clr = GetColor(obj)
 % Container/Color
 %
 %
-clr = obj.color_;
+clr = obj.Color;
 end

@@ -1,6 +1,6 @@
 function SetTitle(obj,title)
 % Axes/SetTitle
 
-hTitle = get(obj.hEUI, 'Title');
+hTitle = get(obj.hUI, 'Title');
 set(hTitle, 'String', title);
 end

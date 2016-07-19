@@ -3,11 +3,11 @@ classdef Layout < hgsetget
     
     properties
         hUI; % handle
-        width_;
-        height_;
-        proportion_;
-        children_;
-        childrenproportions_;
+        Width;
+        Height;
+        Proportion;
+        Children;
+        ChildrenProportions;
     end
     
     methods

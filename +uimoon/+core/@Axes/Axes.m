@@ -1,4 +1,4 @@
-classdef Axes < uimoon.core.EComponent
+classdef Axes < uimoon.core.Component
     % AXES
     
     properties
@@ -6,13 +6,10 @@ classdef Axes < uimoon.core.EComponent
     
     methods
         function obj = Axes()
-            obj.hUI = uipanel('BackgroundColor','w',...
-                'Units','Pixels');
-            p_pos = get(obj.hUI,'Position');
-            obj.hEUI = axes('Parent',obj.hUI,...
+            obj.hUI = axes('Parent',obj.DEFAULT_PARENT,...
                 'NextPlot','Replace',...
-                'XLim',[0 p_pos(3)],...
-                'YLim',[0 p_pos(4)]);
+                'XLim',[0 1],...
+                'YLim',[0 1]);
         end
     end
     

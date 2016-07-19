@@ -11,11 +11,11 @@ app.Center();
 
 % Layouts
 bx = BoxLayout('v',2);
-bxctrl = BoxLayout('h',1);
+bxctrl = BoxLayout('h',2);
 
 % Axes
 ax = Axes();
-ax.Plot2D(NaN,NaN);
+ax.Plot(NaN,NaN);
 bx.Add(ax,0.9);
 
 % Controls
@@ -43,7 +43,7 @@ chk.SetCallback(@setgrid);
         fx = fun.GetText();
         x = linspace(0,10,1000);
         y = eval(fx);
-        ax.Plot2D(x,y);
+        ax.Plot(x,y);
     end
 
     function setgrid(~,~,obj)

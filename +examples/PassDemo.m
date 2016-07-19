@@ -7,7 +7,7 @@ function PassDemo
 import uimoon.core.*
 
 app = Frame('Pass Demo',[200 80]);
-bx = BoxLayout('v',10);
+bx = BoxLayout('v',2);
 pw = PasswordField();
 bt = Button('Go!!!');
 bt.SetCallback(@verificar);

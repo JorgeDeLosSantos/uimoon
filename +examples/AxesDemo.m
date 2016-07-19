@@ -20,9 +20,9 @@ x = linspace(0,10);
 y = cos(x);
 ax1.Sphere(10,2,1,3);
 ax1.SetLabels('x','y','z');
-ax2.Plot2D(x,y,'g');
+ax2.Plot(x,y,'g');
 ax2.SetTitle('Plotting with UIMOON');
-ax3.Plot2D(x,y,'b');
+ax3.Plot(x,y,'b');
 ax3.SetGrid(true);
 ax3.SetColor([0,250,200]/255);
 

@@ -8,7 +8,8 @@ function SetLayout(obj,layout)
 
 set(layout.hUI, 'Parent', obj.hUI);
 obj.AddChildren(layout);
-set(layout.hUI, 'Units', 'Normalized', 'Position',[0 0 1 1]);
+set(layout.hUI, 'Units', 'Normalized',...
+    'Position',[0 0 1 1]);
 set(layout.hUI, 'Visible', 'on');
 layout.Draw(); % Redraw()
 end

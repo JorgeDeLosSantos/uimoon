@@ -11,8 +11,8 @@ end
 
 uisp = uimoon.core.Panel();
 uisp.SetProportion(space);
-obj.children_ = [obj.children_, {uisp}];
-obj.childrenproportions_ = [obj.childrenproportions_, space];
+obj.Children = [obj.Children, {uisp}];
+obj.ChildrenProportions = [obj.ChildrenProportions, space];
 try
     set(uisp.hUI,    ...
         'Parent',    obj.hUI,...

@@ -12,9 +12,9 @@ classdef Panel < uimoon.core.Container
             obj.hUI = uipanel('units','pixels',...
                 'Position',[0 0 size(1) size(2)],...
                 'BorderType','None');
-            obj.size_ = size;
-            obj.width_ = size(1);
-            obj.height_ = size(2);
+            obj.Size = size;
+            obj.Width = size(1);
+            obj.Height = size(2);
         end
     end
     

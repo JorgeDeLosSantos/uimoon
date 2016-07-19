@@ -1,5 +1,5 @@
 function SetSize(obj,width,height)
-% Container.SetSize 
+% Container/SetSize 
 %
 % Establece el tamaño de un objeto de la clase Container o de
 % una sub-clase de la anterior.

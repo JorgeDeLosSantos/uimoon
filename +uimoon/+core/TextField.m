@@ -12,7 +12,7 @@ classdef TextField < uimoon.core.Component
             obj.hUI = uicontrol('Style','edit',...
                 'String',str,'BackG','w',...
                 obj.DEFAULT_PROPERTIES{:});
-            obj.str_ = str;
+            obj.String = str;
         end
     end
 end
