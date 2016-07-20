@@ -39,9 +39,9 @@ classdef Axes < uimoon.core.Component
         YTickLabelMode;
         ZTickLabelMode;
         TickLabelInterpreter;
-        XTickLabelRotation;
-        YTickLabelRotation;
-        ZTickLabelRotation;
+        XTickLabelRotation; % For > R2014b 
+        YTickLabelRotation; % For > R2014b
+        ZTickLabelRotation; % For > R2014b
         XMinorTick;
         YMinorTick;
         ZMinorTick;
