@@ -3,7 +3,10 @@ function parent = GetParent(obj)
 %
 % Return the parent of this object
 %  
-parent = obj.Parent;
-
+try
+    parent = obj.Parent;
+catch %#ok
+    parent = get(obj.hUI, 'Parent');
+end
 end
 
