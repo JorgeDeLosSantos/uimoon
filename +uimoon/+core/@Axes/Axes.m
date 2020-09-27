@@ -10,6 +10,7 @@ classdef Axes < uimoon.core.Component
         YAxis;
         ZAxis;
         XAxisLocation;
+        YAxisLocation;
         ZAxisLocation;
         XColor;
         YColor;
