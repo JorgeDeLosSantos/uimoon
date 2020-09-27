@@ -12,9 +12,9 @@ app.Center(); % Center Frame
 bx = BoxLayout('h',2);
 
 % Axes
-ax1 = Axes();
-ax2 = Axes();
-ax3 = Axes();
+ax1 = Axes(app);
+ax2 = Axes(app);
+ax3 = Axes(app);
 
 x = linspace(0,10);
 y = cos(x);

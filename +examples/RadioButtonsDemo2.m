@@ -12,7 +12,7 @@ bx = BoxLayout('h',2);
 rb = RadioButtonMenu('Sine | Cosine | Tangent');
 rb.SetSelectionChange(@change_fcn);
 ax = Axes();
-ax.Plot2D(NaN,NaN);
+ax.Plot(NaN,NaN);
 bx.Add(rb,1/4);
 bx.Add(ax,3/4);
 app.SetLayout(bx);
@@ -23,15 +23,15 @@ app.SetLayout(bx);
         if strcmp(curr_str,'Sine')
             X = linspace(0,10);
             Y = sin(X);
-            ax.Plot2D(X,Y);
+            ax.Plot(X,Y);
         elseif strcmp(curr_str,'Cosine')
             X = linspace(0,10);
             Y = cos(X);
-            ax.Plot2D(X,Y);
+            ax.Plot(X,Y);
         elseif strcmp(curr_str,'Tangent')
             X = linspace(0,10);
             Y = tan(X);
-            ax.Plot2D(X,Y);
+            ax.Plot(X,Y);
         end
         ax.SetGrid(true);
     end

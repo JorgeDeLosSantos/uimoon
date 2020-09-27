@@ -45,13 +45,12 @@ classdef Component < hgsetget
         UserData;
         Value;
         Visible;
-    end
-    
-    properties
+        
         DEFAULT_PROPERTIES = {'Visible','off',...
             'Tag', 'uimoon'};
         DEFAULT_PARENT = gcf();
     end
+    
     
     
     methods
