@@ -47,11 +47,12 @@ classdef Component < hgsetget
         Visible;
     end
     
-    properties (Constant)
+    properties
         DEFAULT_PROPERTIES = {'Visible','off',...
             'Tag', 'uimoon'};
         DEFAULT_PARENT = gcf();
     end
+    
     
     methods
         function obj = Component

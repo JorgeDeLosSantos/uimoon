@@ -4,7 +4,7 @@ classdef CheckBox < uimoon.core.Component
     %
     
     properties
-        Value;
+%         Value;
     end
     
     methods

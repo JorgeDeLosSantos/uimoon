@@ -1,8 +1,9 @@
-classdef StaticBitmap < uimoon.core.EComponent
+classdef StaticBitmap < uimoon.core.Component
     % StaticBitmap
     
     properties
         hUICont; % Self-Container
+        hEUI;
     end
     
     methods

@@ -3,7 +3,7 @@ classdef RadioButtonMenu < uimoon.core.Component
     %
     %
     properties
-        
+        str_;
     end
     
     methods
