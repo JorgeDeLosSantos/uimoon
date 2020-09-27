@@ -8,12 +8,17 @@ import uimoon.utils.*
 
 app = Frame('Layout Demo');
 app.SetSize(400,300);
+% set(app.hUI, 'HandleVisibility', 'off');
 % 
-% 
-bx = BoxLayout('v', 5);
-bx1 = GridLayout(2,2,1);
+bx = GridLayout(2,2,1);
 
-bx.Add(Button('A'), 0.2);
-bx.Add(Button('B'), 0.4);
-bx.Add(Button('B'), 0.4);
+bt1 = Button('A');
+bt2 = Button('B');
+
+bt1.SetColor('#dadaff');
+bt2.SetBackgroundColor(1,1,0);
+
+bx.Add(bt1);
+bx.Add(bt2);
 app.SetLayout(bx);
+set(bx.hUI,'BackgroundColor','r');

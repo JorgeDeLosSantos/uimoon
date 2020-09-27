@@ -4,7 +4,7 @@ classdef Button < uimoon.core.Component
     % Sintaxis:
     %
     %           hBt = Button(str);
-    %           
+    %
     % Ejemplo:
     %
     %           app = Frame('App 1');
@@ -18,6 +18,7 @@ classdef Button < uimoon.core.Component
     
     methods
         function obj = Button(str)
+            obj = obj@uimoon.core.Component;
             obj.hUI = uicontrol('style','push',...
                 'String',str,obj.DEFAULT_PROPERTIES{:});
             obj.String = str;
